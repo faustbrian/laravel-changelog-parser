@@ -22,6 +22,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Display count of available translations (26 to date!)
 - Centralize all links into /data/links.json so they can be updated easily
 
+### Changed
+
+- Upgrade dependencies: Ruby 3.2.1, Middleman, etc.
+
+### Removed
+
+- Unused normalize.css file
+- Identical links assigned in each translation file
+- Duplicate index file for the english version
+
 ### Fixed
 
 - Improve French translation (#377).
@@ -38,16 +48,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix missing logo in 1.1 pages
 - Display notice when translation isn&#039;t for most recent version
 - Various broken links, page versions, and indentations.
-
-### Changed
-
-- Upgrade dependencies: Ruby 3.2.1, Middleman, etc.
-
-### Removed
-
-- Unused normalize.css file
-- Identical links assigned in each translation file
-- Duplicate index file for the english version
 
 ## [1.1.0] - 2019-02-15
 

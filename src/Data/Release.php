@@ -11,7 +11,7 @@ use Spatie\LaravelData\Data;
 
 final class Release extends Data
 {
-    public readonly Collection $sections;
+    public Collection $sections;
 
     public function __construct(
         public readonly string $version,
@@ -24,6 +24,8 @@ final class Release extends Data
     public function setSection(Section $section): void
     {
         $this->sections->put($section->type, $section);
+
+        $this->sections = $this->sections->sortBy(fn (Section $section, string $key) => \array_search($key, SectionEnum::sortedValues(), true));
     }
 
     public function isUnreleased(): bool

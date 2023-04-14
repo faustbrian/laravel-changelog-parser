@@ -19,17 +19,17 @@
 
 ## [7.0.0] - 2021-04-17
 
+### Added
+
+- Document chained batch encoding options (Level/levelup#633) (0b3c11d) (Vincent Weevers)
+- Document the clear event (Level/community#79) (52314bf) (Vincent Weevers)
+
 ### Changed
 
 - Breaking: bump leveldown and level-packager (53bd922) (Vincent Weevers)
 - Breaking: bump level-js from 5.x to 6.x (#194) (1f6c603) (Alex Potsides)
 - Breaking: modernize syntax (Level/community#98) (d001b2c) (Vincent Weevers)
 - Add files to package.json and remove .npmignore (329e1f5) (Vincent Weevers)
-
-### Added
-
-- Document chained batch encoding options (Level/levelup#633) (0b3c11d) (Vincent Weevers)
-- Document the clear event (Level/community#79) (52314bf) (Vincent Weevers)
 
 ### Removed
 
@@ -46,17 +46,17 @@
 
 ## [6.0.0] - 2019-10-19
 
+### Added
+
+- Document manifest, iterator() and clear() (#162) (@vweevers)
+- Add links to browserify-starter and webpack-starter (6ff1802) (@vweevers)
+
 ### Changed
 
 - Breaking: upgrade level-js from ^4.0.0 to ^5.0.0 (#158) (@vweevers)
 - Upgrade hallmark devDependency from ^0.1.0 to ^2.0.0 (#152, #157) (@vweevers)
 - Upgrade standard devDependency from ^12.0.0 to ^14.0.0 (#151, #155) (@vweevers)
 - Upgrade nyc devDependency from ^13.2.0 to ^14.0.0 (#147) (@vweevers)
-
-### Added
-
-- Document manifest, iterator() and clear() (#162) (@vweevers)
-- Add links to browserify-starter and webpack-starter (6ff1802) (@vweevers)
 
 ### Fixed
 
@@ -70,6 +70,15 @@
 
 ## [5.0.0] - 2019-03-29
 
+### Added
+
+- Integrate level-js for browser support (#135) (@vweevers)
+- Add appveyor (#112) (@ralphtheninja)
+- Enable OSX on Travis (#111) (@ralphtheninja)
+- Add nyc and coveralls devDependencies (#115, #143) (@ralphtheninja, @vweevers)
+- Add hallmark devDependency (#134) (@vweevers)
+- Add note about Rollup to README.md (#139) (@vweevers)
+
 ### Changed
 
 - Upgrade leveldown from ^4.0.0 to ^5.0.0 (#133, #144) (@vweevers)
@@ -80,15 +89,6 @@
 - Tweak Open Collective documentation (#137) (@vweevers)
 - Apply common project tweaks (#136, #138) (@vweevers)
 - Add .travis.yml and appveyor.yml to .npmignore (7b5c340) (@vweevers)
-
-### Added
-
-- Integrate level-js for browser support (#135) (@vweevers)
-- Add appveyor (#112) (@ralphtheninja)
-- Enable OSX on Travis (#111) (@ralphtheninja)
-- Add nyc and coveralls devDependencies (#115, #143) (@ralphtheninja, @vweevers)
-- Add hallmark devDependency (#134) (@vweevers)
-- Add note about Rollup to README.md (#139) (@vweevers)
 
 ### Removed
 
