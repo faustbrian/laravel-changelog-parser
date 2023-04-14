@@ -45,3 +45,4 @@
 ### Removed
 
 - Section about &quot;changelog&quot; vs &quot;CHANGELOG&quot;.
+
