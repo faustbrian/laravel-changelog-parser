@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#2 \\$releaseDate of class PreemStudio\\\\ChangelogParser\\\\Data\\\\Release constructor expects Carbon\\\\Carbon\\|null, Carbon\\\\Carbon\\|false given\\.$#"
+			message: "#^Parameter \\#2 \\$date of class PreemStudio\\\\ChangelogParser\\\\Data\\\\Release constructor expects Carbon\\\\Carbon\\|null, Carbon\\\\Carbon\\|false given\\.$#"
 			count: 1
 			path: src/Actions/ParseRelease.php
 

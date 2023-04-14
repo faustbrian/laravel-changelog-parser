@@ -28,7 +28,7 @@ it('should get the UNRELEASED release', function (): void {
     $unreleased = $this->changelog->getUnreleased();
 
     expect($unreleased->version)->toBe(SectionEnum::UNRELEASED->value);
-    expect($unreleased->releaseDate)->toBeNull();
+    expect($unreleased->date)->toBeNull();
     expect($unreleased->sections)->toHaveCount(0);
     expect($unreleased->sections->get(SectionEnum::ADDED->value))->toBeNull();
     expect($this->changelog->getLatestRelease()->tagReference)->not()->toBeNull();
@@ -39,8 +39,8 @@ it('should get the latest release', function (): void {
 
     expect($release->version)->toBe('1.1.1');
     expect($release->isUnreleased())->toBeFalse();
-    expect($release->releaseDate)->toBeInstanceOf(DateTimeInterface::class);
-    expect($release->releaseDate->format('Y-m-d'))->toBe('2023-03-05');
+    expect($release->date)->toBeInstanceOf(DateTimeInterface::class);
+    expect($release->date->format('Y-m-d'))->toBe('2023-03-05');
     expect($release->sections)->toHaveCount(4);
     expect($release->sections->get(SectionEnum::ADDED->value))->toBeInstanceOf(Section::class);
     expect($release->sections->get(SectionEnum::DEPRECATED->value))->toBeNull();

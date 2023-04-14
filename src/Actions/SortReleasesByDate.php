@@ -12,11 +12,11 @@ final class SortReleasesByDate
     public static function execute(array $releases): Collection
     {
         return collect($releases)->sortByDesc(function (Release $release) {
-            if (null === $release->releaseDate) {
+            if (null === $release->date) {
                 return -1;
             }
 
-            return $release->releaseDate->getTimestamp();
+            return $release->date->getTimestamp();
         });
     }
 }

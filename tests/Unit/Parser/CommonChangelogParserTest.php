@@ -29,8 +29,8 @@ it('should get the latest release', function (): void {
 
     expect($release->version)->toBe('8.0.0');
     expect($release->isUnreleased())->toBeFalse();
-    expect($release->releaseDate)->toBeInstanceOf(DateTimeInterface::class);
-    expect($release->releaseDate->format('Y-m-d'))->toBe('2022-03-25');
+    expect($release->date)->toBeInstanceOf(DateTimeInterface::class);
+    expect($release->date->format('Y-m-d'))->toBe('2022-03-25');
     expect($release->sections)->toHaveCount(1);
     expect($release->sections->get(SectionEnum::CHANGED->value))->toBeInstanceOf(Section::class);
     expect($release->tagReference)->not()->toBeNull();

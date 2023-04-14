@@ -15,7 +15,7 @@ final class Release extends Data
 
     public function __construct(
         public readonly string $version,
-        public readonly ?Carbon $releaseDate = null,
+        public readonly ?Carbon $date = null,
         public ?string $tagReference = null,
         ?Collection $sections = null,
     ) {

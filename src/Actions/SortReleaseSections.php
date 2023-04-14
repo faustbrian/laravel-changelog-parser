@@ -23,7 +23,7 @@ final class SortReleaseSections
     {
         return new Release(
             version: $release->version,
-            releaseDate: $release->releaseDate,
+            date: $release->date,
             tagReference: $release->tagReference,
             sections: $release->sections->sortBy(fn (Section $section, string $key) => \array_search($key, self::ORDER, true)),
         );

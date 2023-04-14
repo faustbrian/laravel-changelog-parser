@@ -1,8 +1,8 @@
-@if ($release->releaseDate)
+@if ($release->date)
 @if ($release->tagReference && $configuration->includeTagReferences)
-## [{{ $release->version }}] - {{ $release->releaseDate->toDateString() }}
+## [{{ $release->version }}] - {{ $release->date->toDateString() }}
 @else
-## {{ $release->version }} - {{ $release->releaseDate->toDateString() }}
+## {{ $release->version }} - {{ $release->date->toDateString() }}
 @endif
 @else
 @if ($release->tagReference && $configuration->includeTagReferences)
