@@ -16,7 +16,7 @@
 ### {{ $sectionTitle }}
 
 @foreach ($section->entries as $sectionEntry)
-- {{ $sectionEntry }}
+- {!! $sectionEntry !!}
 @endforeach
 @endforeach
 

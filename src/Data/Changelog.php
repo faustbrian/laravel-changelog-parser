@@ -9,6 +9,8 @@ use Spatie\LaravelData\Data;
 
 final class Changelog extends Data
 {
+    use Concerns\WithDescription;
+
     public function __construct(
         public readonly Collection $releases,
         public readonly array $description = [],

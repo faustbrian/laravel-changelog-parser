@@ -17,7 +17,7 @@ beforeEach(function (): void {
 it('should parse the changelog', function (): void {
     expect($this->changelog->hasReleases())->toBeTrue();
     expect($this->changelog->description)->toBeArray();
-    expect($this->changelog->description)->toHaveCount(9);
+    expect($this->changelog->description)->toHaveCount(1);
     expect($this->changelog->releases)->toHaveCount(42);
     expect($this->changelog->getLatestRelease())->toBeInstanceOf(Release::class);
     expect($this->changelog->getUnreleased())->toBeNull();

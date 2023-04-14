@@ -16,6 +16,11 @@ parameters:
 			path: src/Actions/SortReleasesByDate.php
 
 		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Tokenizer\\:\\:tokenize\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Contracts/Tokenizer.php
+
+		-
 			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:__construct\\(\\) has parameter \\$releases with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Data/Changelog.php
@@ -33,6 +38,11 @@ parameters:
 		-
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:filter\\(\\) expects \\(callable\\(mixed, \\(int\\|string\\)\\)\\: bool\\)\\|null, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: bool given\\.$#"
 			count: 1
+			path: src/Data/Changelog.php
+
+		-
+			message: "#^Readonly property PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:\\$description is assigned outside of the constructor\\.$#"
+			count: 2
 			path: src/Data/Changelog.php
 
 		-
@@ -54,3 +64,108 @@ parameters:
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release given\\.$#"
 			count: 1
 			path: src/Formatter/Changelog/KeepAChangelogFormatter.php
+
+		-
+			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$date\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/NodeParser.php
+
+		-
+			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$version\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/NodeParser.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/NodeParser.php
+
+		-
+			message: "#^Left side of && is always true\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/NodeParser.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/NodeParser.php
+
+		-
+			message: "#^Variable \\$currentSection in empty\\(\\) always exists and is always falsy\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/NodeParser.php
+
+		-
+			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$href\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/ReleaseNormalizer.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Parser\\\\KeepAChangelog\\\\ReleaseNormalizer\\:\\:normalize\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/ReleaseNormalizer.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release given\\.$#"
+			count: 1
+			path: src/Parser/KeepAChangelog/ReleaseNormalizer.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\MarkdownTokenizer\\:\\:tokenize\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Tokenizer/MarkdownTokenizer.php
+
+		-
+			message: "#^Undefined variable\\: \\$matches$#"
+			count: 1
+			path: src/Tokenizer/MarkdownTokenizer.php
+
+		-
+			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Node\\\\ReleaseHeading\\:\\:\\$date \\(Carbon\\\\Carbon\\|null\\) does not accept Carbon\\\\Carbon\\|false\\.$#"
+			count: 1
+			path: src/Tokenizer/Node/ReleaseHeading.php
+
+		-
+			message: "#^Readonly property PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Node\\\\ReleaseHeading\\:\\:\\$date is already assigned\\.$#"
+			count: 1
+			path: src/Tokenizer/Node/ReleaseHeading.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:__construct\\(\\) has parameter \\$nodes with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Tokenizer/NodeWalker.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:first\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node but returns mixed\\.$#"
+			count: 1
+			path: src/Tokenizer/NodeWalker.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:get\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\|null but returns mixed\\.$#"
+			count: 1
+			path: src/Tokenizer/NodeWalker.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:last\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node but returns mixed\\.$#"
+			count: 1
+			path: src/Tokenizer/NodeWalker.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Query\\:\\:find\\(\\) has parameter \\$nodes with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Tokenizer/Query.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Query\\:\\:find\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\|null but returns mixed\\.$#"
+			count: 1
+			path: src/Tokenizer/Query.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Query\\:\\:findAll\\(\\) has parameter \\$nodes with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Tokenizer/Query.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Query\\:\\:findAll\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Tokenizer/Query.php

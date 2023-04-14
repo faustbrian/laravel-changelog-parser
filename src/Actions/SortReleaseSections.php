@@ -22,10 +22,11 @@ final class SortReleaseSections
     public static function execute(Release $release): Release
     {
         return new Release(
-            version: $release->version,
             date: $release->date,
-            tagReference: $release->tagReference,
+            description: $release->description,
             sections: $release->sections->sortBy(fn (Section $section, string $key) => \array_search($key, self::ORDER, true)),
+            tagReference: $release->tagReference,
+            version: $release->version,
         );
     }
 }

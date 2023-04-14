@@ -1,6 +1,27 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
 ## [1.1.1] - 2023-03-05
 
+Some release description.
+
+[Some release description.](https://google.com)
+
+Some release description.
+
 ### Added
+
+Some text.
+
+[Some text.](https://google.com)
+
+Some text.
 
 - Arabic translation (#444).
 - v1.1 French translation.
@@ -13,17 +34,13 @@
 - Display count of available translations (26 to date!)
 - Centralize all links into `/data/links.json` so they can be updated easily
 
-### Changed
-
-- Upgrade dependencies: Ruby 3.2.1, Middleman, etc.
-
-### Removed
-
-- Unused normalize.css file
-- Identical links assigned in each translation file
-- Duplicate index file for the english version
-
 ### Fixed
+
+Some text.
+
+[Some text.](https://google.com)
+
+Some text.
 
 - Improve French translation (#377).
 - Improve id-ID translation (#416).
@@ -40,4 +57,27 @@
 - Display notice when translation isn't for most recent version
 - Various broken links, page versions, and indentations.
 
+### Changed
+
+Some text.
+
+[Some text.](https://google.com)
+
+Some text.
+
+- Upgrade dependencies: Ruby 3.2.1, Middleman, etc.
+
+### Removed
+
+Some text.
+
+[Some text.](https://google.com)
+
+Some text.
+
+- Unused normalize.css file
+- Identical links assigned in each translation file
+- Duplicate index file for the english version
+
+[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
 [1.1.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.1.1
