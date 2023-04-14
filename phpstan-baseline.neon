@@ -6,6 +6,11 @@ parameters:
 			path: src/Actions/ParseRelease.php
 
 		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:sortBy\\(\\) expects array\\<array\\{string, string\\}\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string\\>\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Section, string\\)\\: 0\\|1\\|2\\|3\\|4\\|5\\|false given\\.$#"
+			count: 1
+			path: src/Actions/SortReleaseSections.php
+
+		-
 			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Actions\\\\SortReleasesByDate\\:\\:execute\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Actions/SortReleasesByDate.php
@@ -31,7 +36,7 @@ parameters:
 			path: src/Data/Changelog.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:sortBy\\(\\) expects array\\<array\\{string, string\\}\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string\\>\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Section, string\\)\\: int\\|string\\|false given\\.$#"
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:__construct\\(\\) has parameter \\$sections with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Data/Release.php
 
@@ -41,6 +46,11 @@ parameters:
 			path: src/Data/Release.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:sortBy\\(\\) expects array\\<array\\{string, string\\}\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string\\>\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: bool given\\.$#"
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release given\\.$#"
+			count: 1
+			path: src/Formatter/CommonChangelogFormatter.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release given\\.$#"
 			count: 1
 			path: src/Formatter/KeepAChangelogFormatter.php

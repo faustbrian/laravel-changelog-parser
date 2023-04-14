@@ -19,16 +19,4 @@ enum SectionEnum: string
     case SECURITY = 'Security';
 
     case UNRELEASED = 'Unreleased';
-
-    public static function sortedValues(): array
-    {
-        return [
-            self::ADDED->value,
-            self::CHANGED->value,
-            self::DEPRECATED->value,
-            self::REMOVED->value,
-            self::FIXED->value,
-            self::SECURITY->value,
-        ];
-    }
 }
