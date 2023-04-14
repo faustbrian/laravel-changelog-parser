@@ -6,17 +6,17 @@ namespace PreemStudio\ChangelogParser\Enum;
 
 enum SectionEnum: string
 {
-    case UNRELEASED = 'Unreleased';
-
     case ADDED = 'Added';
 
     case CHANGED = 'Changed';
 
-    case FIXED = 'Fixed';
-
     case DEPRECATED = 'Deprecated';
+
+    case FIXED = 'Fixed';
 
     case REMOVED = 'Removed';
 
     case SECURITY = 'Security';
+
+    case UNRELEASED = 'Unreleased';
 }

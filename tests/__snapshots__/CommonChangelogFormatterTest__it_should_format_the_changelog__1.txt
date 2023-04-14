@@ -1,0 +1,445 @@
+# Changelog
+
+## [8.0.0] - 2022-03-25
+
+### Changed
+
+- Breaking: switch to classic-level and browser-level (#215) (ad22b21) (Vincent Weevers).
+
+## [7.0.1] - 2021-10-02
+
+### Added
+
+- Document new features (#207) (ad8f924) (Vincent Weevers)
+
+### Fixed
+
+- Bump dependencies to prevent dedupe (7083ec6) (Vincent Weevers)
+- Clarify close() documentation (#197) (c82fdbc) (Vincent Weevers)
+
+## [7.0.0] - 2021-04-17
+
+### Changed
+
+- Breaking: bump leveldown and level-packager (53bd922) (Vincent Weevers)
+- Breaking: bump level-js from 5.x to 6.x (#194) (1f6c603) (Alex Potsides)
+- Breaking: modernize syntax (Level/community#98) (d001b2c) (Vincent Weevers)
+- Add files to package.json and remove .npmignore (329e1f5) (Vincent Weevers)
+
+### Added
+
+- Document chained batch encoding options (Level/levelup#633) (0b3c11d) (Vincent Weevers)
+- Document the clear event (Level/community#79) (52314bf) (Vincent Weevers)
+
+### Removed
+
+- Breaking: drop node 8 (Level/community#98) (f8a0047, 31317a6) (Vincent Weevers)
+- Remove legacy range options from README (Level/community#86) (e56c6b1) (Vincent Weevers)
+
+## [6.0.1] - 2020-03-04
+
+### Changed
+
+- Switch from opencollective-postinstall to npm funding (#173) (@Richienb)
+- Upgrade nyc devDependency from ^14.0.0 to ^15.0.0 (#169) (@vweevers)
+- Upgrade airtap devDependency from ^2.0.1 to ^3.0.0 (#171) (@vweevers)
+
+## [6.0.0] - 2019-10-19
+
+### Changed
+
+- Breaking: upgrade level-js from ^4.0.0 to ^5.0.0 (#158) (@vweevers)
+- Upgrade hallmark devDependency from ^0.1.0 to ^2.0.0 (#152, #157) (@vweevers)
+- Upgrade standard devDependency from ^12.0.0 to ^14.0.0 (#151, #155) (@vweevers)
+- Upgrade nyc devDependency from ^13.2.0 to ^14.0.0 (#147) (@vweevers)
+
+### Added
+
+- Document manifest, iterator() and clear() (#162) (@vweevers)
+- Add links to browserify-starter and webpack-starter (6ff1802) (@vweevers)
+
+### Fixed
+
+- Bump leveldown and level-packager to prevent dedupe (5efdc82, a9656c3, 97cb31c) (@vweevers)
+
+## [5.0.1] - 2019-03-29
+
+### Fixed
+
+- Temporarily skip hallmark test because it breaks CITGM (#145) (@vweevers)
+
+## [5.0.0] - 2019-03-29
+
+### Changed
+
+- Upgrade leveldown from ^4.0.0 to ^5.0.0 (#133, #144) (@vweevers)
+- Upgrade level-packager from ^3.0.0 to ^5.0.0 (#113, #131) (@ralphtheninja, @vweevers)
+- Prefer var over const in README (f032b6c) (@ralphtheninja)
+- Upgrade standard devDependency from ^11.0.0 to ^12.0.0 (#118) (@ralphtheninja)
+- Tweak copyright years for less maintenance (0b9c8ad) (@ralphtheninja)
+- Tweak Open Collective documentation (#137) (@vweevers)
+- Apply common project tweaks (#136, #138) (@vweevers)
+- Add .travis.yml and appveyor.yml to .npmignore (7b5c340) (@vweevers)
+
+### Added
+
+- Integrate level-js for browser support (#135) (@vweevers)
+- Add appveyor (#112) (@ralphtheninja)
+- Enable OSX on Travis (#111) (@ralphtheninja)
+- Add nyc and coveralls devDependencies (#115, #143) (@ralphtheninja, @vweevers)
+- Add hallmark devDependency (#134) (@vweevers)
+- Add note about Rollup to README.md (#139) (@vweevers)
+
+### Removed
+
+- Remove node 6 and 9 (#129, 2bf1d3f) (@ralphtheninja)
+- Remove contributors from package.json (f37252d) (@ralphtheninja)
+
+## [4.0.0] - 2018-05-23
+
+### Changed
+
+- Update leveldown to ^4.0.0 (@ralphtheninja)
+- Update level-packager to ^3.0.0 (@ralphtheninja)
+- Switch to opencollective-postinstall (@mateodelnorte)
+
+### Removed
+
+- Remove node 4 from Travis (@ralphtheninja)
+
+## [3.0.2] - 2018-05-23
+
+### Changed
+
+- Switch to opencollective-postinstall (@mateodelnorte)
+
+## [3.0.1] - 2018-05-05
+
+### Added
+
+- Travis: add 10 (@ralphtheninja)
+
+### Changed
+
+- Update standard to ^11.0.0 (@ralphtheninja)
+- Fix typo in README (@rasmuserik)
+
+### Fixed
+
+- Fix postinstall failures with OpenCollective (@vweevers)
+
+## [3.0.0] - 2018-02-17
+
+### Added
+
+- Travis: add 9 (@ralphtheninja)
+- README: add table of contents (@ralphtheninja)
+
+### Changed
+
+- Update leveldown to ^3.0.0 (@ralphtheninja)
+
+## [2.1.2] - 2018-01-26
+
+### Added
+
+- Add OpenCollective (@monkeywithacupcake)
+
+### Changed
+
+- README: change Travis badge from png to svg (@ralphtheninja)
+
+## [2.1.1] - 2017-12-13
+
+### Changed
+
+- README: document .errors property (@ralphtheninja)
+
+## [2.1.0] - 2017-12-06
+
+### Changed
+
+- Update level-packager to ^2.0.2 (@ralphtheninja)
+- Update leveldown to ^2.1.1 (@ralphtheninja)
+
+## [2.0.1] - 2017-11-11
+
+### Changed
+
+- Restore node 4 (@vweevers)
+
+## [2.0.0] - 2017-10-17
+
+### Added
+
+- Add standard for linting (@ralphtheninja)
+- README: copy over docs from levelup (@ralphtheninja)
+- README: add node badge (@ralphtheninja)
+
+### Changed
+
+- Update level-packager to ~2.0.0 (@ralphtheninja)
+- Update leveldown to ~2.0.0 (@ralphtheninja)
+
+## [2.0.0-rc3] - 2017-09-16
+
+### Changed
+
+- Update level-packager to 2.0.0-rc3 (@ralphtheninja)
+- Update leveldown to ~1.8.0 (@ralphtheninja)
+
+## [2.0.0-rc2] - 2017-09-12
+
+### Changed
+
+- Update level-packager to 2.0.0-rc2 (@ralphtheninja)
+- Update leveldown to ~1.7.2 (@ralphtheninja)
+
+## [2.0.0-rc1] - 2017-09-06
+
+### Added
+
+- README: add Greenkeeper badge (@ralphtheninja)
+- Travis: add 8 (@ralphtheninja)
+
+### Changed
+
+- Update level-packager to 2.0.0-rc1 (@ralphtheninja)
+
+### Removed
+
+- Travis: remove 0.12, 4, 5, and 7 (@ralphtheninja)
+
+## [1.7.0] - 2017-05-17
+
+### Changed
+
+- Update leveldown to ~1.7.0 (@ralphtheninja)
+
+## [1.6.0] - 2017-02-06
+
+### Added
+
+- Travis: add 7 (@ralphtheninja)
+
+### Changed
+
+- Update copyright year to 2017 (@ralphtheninja)
+- Update leveldown to ~1.6.0 (@ralphtheninja)
+
+### Removed
+
+- Travis: remove 0.10 (@ralphtheninja)
+
+## [1.5.0] - 2016-10-16
+
+### Added
+
+- Travis: add 6 (@ralphtheninja)
+
+### Changed
+
+- Use gcc 4.8 on Travis
+- Update leveldown to ~1.5.0 (@juliangruber)
+
+### Removed
+
+- Travis: remove 1.0, 1.8, 2 and 3 (@ralphtheninja)
+
+## [1.4.0] - 2015-11-27
+
+### Added
+
+- Travis: add 1.0, 2, 3, 4 and 5 (@ralphtheninja)
+- README: add dependency badge (@ralphtheninja)
+
+### Changed
+
+- Update level-packager to ~1.2.0 (@ralphtheninja)
+
+## [1.3.0] - 2015-07-29
+
+### Changed
+
+- Update leveldown to ~1.4.0 (@ArtskydJ)
+
+## [1.2.0] - 2015-06-24
+
+### Changed
+
+- Update level-packager to ~1.1.0 (@timoxley)
+- Update leveldown to ~1.3.0 (@timoxley)
+
+## [1.1.0] - 2015-06-02
+
+### Changed
+
+- Update leveldown to ~1.2.2 for prebuilt binaries (@ralphtheninja)
+
+## [1.0.0] - 2015-05-19
+
+### Changed
+
+- Update level-packager to ~1.0.0 (@ralphtheninja)
+
+## [1.0.0-0] - 2015-05-16
+
+### Changed
+
+- Use nvm again on Travis (@ralphtheninja)
+- Moved CONTRIBUTING.md and contributors to level/community repository (@ralphtheninja)
+- Use level-packager@next (@ralphtheninja)
+- Update leveldown to ~1.0.6 (@ralphtheninja)
+
+## [0.19.1] - 2015-05-05
+
+### Changed
+
+- Use n instead of nvm on Travis for iojs support on native modules (@ralphtheninja)
+
+## [0.19.0] - 2015-05-05
+
+### Changed
+
+- Switch to plain MIT license (@andrewrk)
+- README: update nodeico badge (@rvagg)
+- README: update logo and copyright (@ralphtheninja)
+- Update level-packager to ~0.19.0 (@ralphtheninja)
+
+## [0.18.0] - 2013-11-18
+
+### Added
+
+- Add Travis (@rvagg)
+
+### Changed
+
+- Update level-packager to ~0.18.0 (@rvagg)
+- Update leveldown to ~0.10.0 (@rvagg)
+
+## [0.17.0-1] - 2013-10-09
+
+### Changed
+
+- Use level-packager instead of levelup (@rvagg)
+- Run tests in level-packager using tape (@rvagg)
+
+## [0.17.0] - 2013-10-01
+
+### Changed
+
+- Update levelup to ~0.17.0 (@rvagg)
+- Update leveldown to ~0.9.0 (@rvagg)
+
+## [0.16.0] - 2013-09-10
+
+### Added
+
+- Add @substack to contributors (@rvagg)
+
+### Changed
+
+- Update levelup to ~0.16.0 (@rvagg)
+- Update repository and homepage in package.json (@rvagg)
+
+## [0.15.0] - 2013-08-26
+
+### Changed
+
+- README: tweaks (@rvagg)
+- Update levelup to ~0.15.0 (@rvagg)
+- Update leveldown to ~0.8.0 (@rvagg)
+
+## [0.14.0] - 2013-08-19
+
+### Added
+
+- README: add npm downloads badge (@rvagg)
+
+### Changed
+
+- Update levelup to ~0.14.0 (@rvagg)
+
+## [0.13.0] - 2013-08-11
+
+### Changed
+
+- Update levelup to ~0.13.0 (@rvagg)
+- Update leveldown to ~0.7.0 (@rvagg)
+
+## [0.12.0] - 2013-07-25
+
+### Changed
+
+- Update levelup to ~0.12.0 (@rvagg)
+- Update leveldown to ~0.6.2 (@rvagg)
+
+## [0.11.0] - 2013-07-17
+
+### Added
+
+- Add @pgte to contributors (@rvagg)
+- README: add npm badge (@rvagg)
+
+### Changed
+
+- Update levelup to ~0.11.0 (@rvagg)
+
+## [0.10.0] - 2013-06-14
+
+### Changed
+
+- Update levelup to ~0.10.0 (@rvagg)
+- Update leveldown to ~0.6.0 (@rvagg)
+
+## [0.9.0] - 2013-05-27
+
+### Changed
+
+- Update levelup to ~0.9.0 (@rvagg)
+- Update leveldown to ~0.5.0 (@rvagg)
+
+## [0.8.0] - 2013-05-19
+
+[8.0.0]: https://github.com/Level/level/releases/tag/v8.0.0
+[7.0.1]: https://github.com/Level/level/releases/tag/v7.0.1
+[7.0.0]: https://github.com/Level/level/releases/tag/v7.0.0
+[6.0.1]: https://github.com/Level/level/releases/tag/v6.0.1
+[6.0.0]: https://github.com/Level/level/releases/tag/v6.0.0
+[5.0.1]: https://github.com/Level/level/releases/tag/v5.0.1
+[5.0.0]: https://github.com/Level/level/releases/tag/v5.0.0
+[4.0.0]: https://github.com/Level/level/releases/tag/v4.0.0
+[3.0.2]: https://github.com/Level/level/releases/tag/v3.0.2
+[3.0.1]: https://github.com/Level/level/releases/tag/v3.0.1
+[3.0.0]: https://github.com/Level/level/releases/tag/v3.0.0
+[2.1.2]: https://github.com/Level/level/releases/tag/v2.1.2
+[2.1.1]: https://github.com/Level/level/releases/tag/v2.1.1
+[2.1.0]: https://github.com/Level/level/releases/tag/v2.1.0
+[2.0.1]: https://github.com/Level/level/releases/tag/v2.0.1
+[2.0.0]: https://github.com/Level/level/releases/tag/v2.0.0
+[2.0.0-rc3]: https://github.com/Level/level/releases/tag/v2.0.0-rc3
+[2.0.0-rc2]: https://github.com/Level/level/releases/tag/v2.0.0-rc2
+[2.0.0-rc1]: https://github.com/Level/level/releases/tag/v2.0.0-rc1
+[1.7.0]: https://github.com/Level/level/releases/tag/v1.7.0
+[1.6.0]: https://github.com/Level/level/releases/tag/v1.6.0
+[1.5.0]: https://github.com/Level/level/releases/tag/v1.5.0
+[1.4.0]: https://github.com/Level/level/releases/tag/v1.4.0
+[1.3.0]: https://github.com/Level/level/releases/tag/v1.3.0
+[1.2.0]: https://github.com/Level/level/releases/tag/v1.2.0
+[1.1.0]: https://github.com/Level/level/releases/tag/v1.1.0
+[1.0.0]: https://github.com/Level/level/releases/tag/v1.0.0
+[1.0.0-0]: https://github.com/Level/level/releases/tag/v1.0.0-0
+[0.19.1]: https://github.com/Level/level/releases/tag/v0.19.1
+[0.19.0]: https://github.com/Level/level/releases/tag/v0.19.0
+[0.18.0]: https://github.com/Level/level/releases/tag/0.18.0
+[0.17.0-1]: https://github.com/Level/level/releases/tag/0.17.0-1
+[0.17.0]: https://github.com/Level/level/releases/tag/0.17.0
+[0.16.0]: https://github.com/Level/level/releases/tag/0.16.0
+[0.15.0]: https://github.com/Level/level/releases/tag/0.15.0
+[0.14.0]: https://github.com/Level/level/releases/tag/0.14.0
+[0.13.0]: https://github.com/Level/level/releases/tag/0.13.0
+[0.12.0]: https://github.com/Level/level/releases/tag/0.12.0
+[0.11.0]: https://github.com/Level/level/releases/tag/0.11.0
+[0.10.0]: https://github.com/Level/level/releases/tag/0.10.0
+[0.9.0]: https://github.com/Level/level/releases/tag/0.9.0
+[0.8.0]: https://github.com/Level/level/releases/tag/0.8.0

@@ -9,23 +9,11 @@ use Spatie\LaravelData\Data;
 
 final class Changelog extends Data
 {
-    public readonly Collection $releases;
-
     public function __construct(
-        array $releases,
+        public readonly Collection $releases,
         public readonly array $description = [],
     ) {
-        // We cast the releases to a collection and sort them by release date
-        // to make sure the latest release is always the first one in the collection.
-        $this->releases = collect($releases)->sortByDesc(function (Release $release) {
-            $releaseDate = $release->releaseDate;
-
-            if (null === $releaseDate) {
-                return -1;
-            }
-
-            return $releaseDate->getTimestamp();
-        });
+        //
     }
 
     public function hasReleases(): bool

@@ -11,7 +11,7 @@ use PreemStudio\ChangelogParser\Enum\SectionEnum;
 use PreemStudio\ChangelogParser\Parser\KeepAChangelogParser;
 
 beforeEach(function (): void {
-    $this->changelog = (new KeepAChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/KeepAChangelog.md'));
+    $this->changelog = (new KeepAChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/keep-a-changelog.md'));
 });
 
 it('should parse the changelog', function (): void {

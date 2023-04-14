@@ -11,7 +11,7 @@ use PreemStudio\ChangelogParser\Enum\SectionEnum;
 use PreemStudio\ChangelogParser\Parser\CommonChangelogParser;
 
 beforeEach(function (): void {
-    $this->changelog = (new CommonChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/CommonChangelog.md'));
+    $this->changelog = (new CommonChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/common-changelog.md'));
 });
 
 it('should parse the changelog', function (): void {
@@ -45,5 +45,5 @@ it('should get the requested section', function (): void {
 });
 
 it('should throw an exception if the changelog contains an UNRELEASED section', function (): void {
-    (new CommonChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/CommonChangelog-Bad.md'));
+    (new CommonChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/common-changelog-bad.md'));
 })->throws(\Exception::class);
