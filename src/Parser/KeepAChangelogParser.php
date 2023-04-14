@@ -13,9 +13,6 @@ use PreemStudio\ChangelogParser\Data\Changelog;
 use PreemStudio\ChangelogParser\Support\MarkdownConverter;
 use Symfony\Component\DomCrawler\Crawler;
 
-/**
- * @see https://keepachangelog.com/
- */
 final class KeepAChangelogParser implements Parser
 {
     public function parse(string $content): Changelog

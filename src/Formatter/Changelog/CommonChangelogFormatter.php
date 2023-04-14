@@ -2,18 +2,15 @@
 
 declare(strict_types=1);
 
-namespace PreemStudio\ChangelogParser\Formatter;
+namespace PreemStudio\ChangelogParser\Formatter\Changelog;
 
 use Illuminate\Support\Facades\View;
 use PreemStudio\ChangelogParser\Actions\SortReleaseSections;
-use PreemStudio\ChangelogParser\Contracts\Formatter;
+use PreemStudio\ChangelogParser\Contracts\ChangelogFormatter;
 use PreemStudio\ChangelogParser\Data\Changelog;
 use PreemStudio\ChangelogParser\Data\Release;
 
-/**
- * @see https://common-changelog.org/
- */
-final class CommonChangelogFormatter implements Formatter
+final class CommonChangelogFormatter implements ChangelogFormatter
 {
     public function format(Changelog $changelog): string
     {

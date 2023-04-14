@@ -15,9 +15,6 @@ use PreemStudio\ChangelogParser\Enum\SectionEnum;
 use PreemStudio\ChangelogParser\Support\MarkdownConverter;
 use Symfony\Component\DomCrawler\Crawler;
 
-/**
- * @see https://common-changelog.org/
- */
 final class CommonChangelogParser implements Parser
 {
     public function parse(string $content): Changelog

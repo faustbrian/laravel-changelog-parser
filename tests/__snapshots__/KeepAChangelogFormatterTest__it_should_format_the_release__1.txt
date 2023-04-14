@@ -1,0 +1,47 @@
+## 1.0.0 - 2017-06-20
+
+### Added
+
+- New visual identity by @tylerfortune8.
+- Version navigation.
+- Links to latest released version in previous versions.
+- &quot;Why keep a changelog?&quot; section.
+- &quot;Who needs a changelog?&quot; section.
+- &quot;How do I make a changelog?&quot; section.
+- &quot;Frequently Asked Questions&quot; section.
+- New &quot;Guiding Principles&quot; sub-section to &quot;How do I make a changelog?&quot;.
+- Simplified and Traditional Chinese translations from @tianshuo.
+- German translation from @mpbzh &amp; @Art4.
+- Italian translation from @azkidenz.
+- Swedish translation from @magol.
+- Turkish translation from @emreerkan.
+- French translation from @zapashcanon.
+- Brazilian Portuguese translation from @Webysther.
+- Polish translation from @amielucha &amp; @m-aciek.
+- Russian translation from @aishek.
+- Czech translation from @h4vry.
+- Slovak translation from @jkostolansky.
+- Korean translation from @pierceh89.
+- Croatian translation from @porx.
+- Persian translation from @Hameds.
+- Ukrainian translation from @osadchyi-s.
+
+### Changed
+
+- Start using &quot;changelog&quot; over &quot;change log&quot; since it&#039;s the common usage.
+- Start versioning based on the current English version at 0.3.0 to help translation authors keep things up-to-date.
+- Rewrite &quot;What makes unicorns cry?&quot; section.
+- Rewrite &quot;Ignoring Deprecations&quot; sub-section to clarify the ideal scenario.
+- Improve &quot;Commit log diffs&quot; sub-section to further argument against them.
+- Merge &quot;Why can’t people just use a git log diff?&quot; with &quot;Commit log diffs&quot;.
+- Fix typos in Simplified Chinese and Traditional Chinese translations.
+- Fix typos in Brazilian Portuguese translation.
+- Fix typos in Turkish translation.
+- Fix typos in Czech translation.
+- Fix typos in Swedish translation.
+- Improve phrasing in French translation.
+- Fix phrasing and spelling in German translation.
+
+### Removed
+
+- Section about &quot;changelog&quot; vs &quot;CHANGELOG&quot;.

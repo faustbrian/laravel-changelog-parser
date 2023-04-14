@@ -6,7 +6,7 @@ namespace PreemStudio\ChangelogParser\Contracts;
 
 use PreemStudio\ChangelogParser\Data\Changelog;
 
-interface Formatter
+interface ChangelogFormatter
 {
     public function format(Changelog $changelog): string;
 }
