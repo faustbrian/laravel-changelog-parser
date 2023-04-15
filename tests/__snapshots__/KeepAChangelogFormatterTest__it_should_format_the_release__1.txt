@@ -50,8 +50,3 @@
 
 - Section about "changelog" vs "CHANGELOG".
 
-### Fixed
-
-- Italian translation (#332).
-- Indonesian translation (#336).
-

@@ -28,18 +28,14 @@ final class NodeParser
 
         foreach ($nodes as $node) {
             if ($node->isReleaseHeading()) {
-                if (null !== $currentRelease) {
-                    $releases[] = $currentRelease;
+                if (null !== $currentSection) {
+                    $currentRelease->setSection(new Section(...$currentSection));
+
+                    $currentSection = null;
                 }
 
-                if (null !== $currentSection) {
-                    $currentRelease->setSection(
-                        new Section(
-                            $currentSection['type'],
-                            $currentSection['entries'],
-                            $currentSection['description'],
-                        ),
-                    );
+                if (null !== $currentRelease) {
+                    $releases[] = $currentRelease;
                 }
 
                 $currentRelease = new Release($node->version, $node->date);
@@ -47,13 +43,7 @@ final class NodeParser
 
             if ($node->isChangeTypeHeading()) {
                 if (null !== $currentSection) {
-                    $currentRelease->setSection(
-                        new Section(
-                            $currentSection['type'],
-                            $currentSection['entries'],
-                            $currentSection['description'],
-                        ),
-                    );
+                    $currentRelease->setSection(new Section(...$currentSection));
                 }
 
                 $currentSection = [
@@ -86,6 +76,10 @@ final class NodeParser
                     continue;
                 }
             }
+        }
+
+        if ($currentSection) {
+            $currentRelease->setSection(new Section(...$currentSection));
         }
 
         if ($currentRelease) {

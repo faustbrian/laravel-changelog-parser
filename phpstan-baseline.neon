@@ -86,12 +86,12 @@ parameters:
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
 		-
-			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			message: "#^Result of && is always false\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
 		-
-			message: "#^Variable \\$currentSection in empty\\(\\) always exists and is always falsy\\.$#"
+			message: "#^Variable \\$currentRelease in empty\\(\\) always exists and is not falsy\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
