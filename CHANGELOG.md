@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.3.3] - 2023-04-15
+### Changed
+- parse section content only once
+
+
 ## [1.3.2] - 2023-04-15
 ### Fixed
 - temporarily make data properties public for `spatie/laravel-data`
@@ -53,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-04-14
 
-[Unreleased]: https://github.com/PreemStudio/package_slug/compare/1.3.2...HEAD
+[Unreleased]: https://github.com/PreemStudio/package_slug/compare/1.3.3...HEAD
+[1.3.3]: https://github.com/PreemStudio/package_slug/compare/1.3.2...1.3.3
 [1.3.2]: https://github.com/PreemStudio/package_slug/compare/1.3.1...1.3.2
 [1.3.1]: https://github.com/PreemStudio/package_slug/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/PreemStudio/package_slug/compare/1.2.2...1.3.0
