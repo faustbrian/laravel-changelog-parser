@@ -10,8 +10,8 @@ use Spatie\LaravelData\Data;
 final class Changelog extends Data
 {
     public function __construct(
-        private readonly Collection $releases,
-        private readonly ?string $description = null,
+        public readonly Collection $releases,
+        public readonly ?string $description = null,
     ) {
         //
     }

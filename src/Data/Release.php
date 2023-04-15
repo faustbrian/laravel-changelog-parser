@@ -11,13 +11,13 @@ use Spatie\LaravelData\Data;
 
 final class Release extends Data
 {
-    private readonly Collection $sections;
+    public readonly Collection $sections;
 
     public function __construct(
-        private readonly string $version,
-        private readonly ?Carbon $date = null,
-        private readonly ?string $description = null,
-        private readonly ?string $tagReference = null,
+        public readonly string $version,
+        public readonly ?Carbon $date = null,
+        public readonly ?string $description = null,
+        public readonly ?string $tagReference = null,
         ?Collection $sections = null,
     ) {
         $this->sections = $sections ?? collect();

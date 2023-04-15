@@ -26,6 +26,11 @@ parameters:
 			path: src/Data/Changelog.php
 
 		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:getReleases\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Data/Changelog.php
+
+		-
 			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:getUnreleased\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\|null but returns mixed\\.$#"
 			count: 1
 			path: src/Data/Changelog.php
@@ -37,6 +42,11 @@ parameters:
 
 		-
 			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:__construct\\(\\) has parameter \\$sections with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
+			count: 1
+			path: src/Data/Release.php
+
+		-
+			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:getSections\\(\\) return type with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Data/Release.php
 
@@ -56,12 +66,12 @@ parameters:
 			path: src/Formatter/Changelog/KeepAChangelogFormatter.php
 
 		-
-			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$date\\.$#"
+			message: "#^Call to an undefined method PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:getDate\\(\\)\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
 		-
-			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$version\\.$#"
+			message: "#^Call to an undefined method PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:getVersion\\(\\)\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
@@ -86,7 +96,7 @@ parameters:
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
 		-
-			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$destination\\.$#"
+			message: "#^Call to an undefined method PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:getDestination\\(\\)\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelog/ReleaseNormalizer.php
 

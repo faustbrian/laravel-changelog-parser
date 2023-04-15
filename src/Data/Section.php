@@ -9,9 +9,9 @@ use Spatie\LaravelData\Data;
 final class Section extends Data
 {
     public function __construct(
-        private readonly string $type,
-        private readonly string $content,
-        private readonly ?string $description = null,
+        public readonly string $type,
+        public readonly string $content,
+        public readonly ?string $description = null,
     ) {
         //
     }
