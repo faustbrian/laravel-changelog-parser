@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.2.0] - 2023-04-14
+### Added
+- implement formatter configuration
+- implement release formatters
+
+### Changed
+- perform section sorting outside of `Release` class
+
+
 ## [1.1.0] - 2023-04-14
 ### Added
 - implement formatters to create human-readable changelogs
@@ -18,5 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-04-14
 
-[Unreleased]: https://github.com/PreemStudio/package_slug/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/PreemStudio/package_slug/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/PreemStudio/package_slug/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/PreemStudio/package_slug/compare/1.0.0...1.1.0
