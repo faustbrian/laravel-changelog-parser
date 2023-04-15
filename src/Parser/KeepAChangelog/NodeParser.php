@@ -37,15 +37,15 @@ final class NodeParser
 
                 if (null !== $currentRelease) {
                     $releases[] = new Release(
-                        $currentRelease->version,
-                        $currentRelease->date,
+                        $currentRelease->getVersion(),
+                        $currentRelease->getDate(),
                         $currentReleaseDescription,
-                        $currentRelease->tagReference,
-                        $currentRelease->sections,
+                        $currentRelease->getTagReference(),
+                        $currentRelease->getSections(),
                     );
                 }
 
-                $currentRelease = new Release($node->version, $node->date);
+                $currentRelease = new Release($node->getVersion(), $node->getDate());
             }
 
             if ($node->isChangeTypeHeading()) {
@@ -91,11 +91,11 @@ final class NodeParser
 
         if ($currentRelease) {
             $releases[] = new Release(
-                $currentRelease->version,
-                $currentRelease->date,
+                $currentRelease->getVersion(),
+                $currentRelease->getDate(),
                 $currentReleaseDescription,
-                $currentRelease->tagReference,
-                $currentRelease->sections,
+                $currentRelease->getTagReference(),
+                $currentRelease->getSections(),
             );
         }
 

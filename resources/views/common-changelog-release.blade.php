@@ -1,25 +1,25 @@
-@if ($release->date)
-@if ($release->tagReference && $configuration->includeTagReferences)
-## [{{ $release->version }}] - {{ $release->date->toDateString() }}
+@if ($release->getDate())
+@if ($release->getTagReference() && $configuration->includeTagReferences)
+## [{{ $release->getVersion() }}] - {{ $release->getDate()->toDateString() }}
 @else
-## {{ $release->version }} - {{ $release->date->toDateString() }}
+## {{ $release->getVersion() }} - {{ $release->getDate()->toDateString() }}
 @endif
 @else
-@if ($release->tagReference && $configuration->includeTagReferences)
-## [{{ $release->version }}]
+@if ($release->getTagReference() && $configuration->includeTagReferences)
+## [{{ $release->getVersion() }}]
 @else
-## {{ $release->version }}
+## {{ $release->getVersion() }}
 @endif
 @endif
-@foreach ($release->sections as $sectionTitle => $section)
+@foreach ($release->getSections() as $sectionTitle => $section)
 
 ### {{ $sectionTitle }}
 
-{!! $section->content !!}
+{!! $section->getContent() !!}
 @endforeach
 
 @if($configuration->includeTagReferences && empty($actingAsView))
-@if ($release->tagReference)
-[{{ $release->version }}]: {{ $release->tagReference }}
+@if ($release->getTagReference())
+[{{ $release->getVersion() }}]: {{ $release->getTagReference() }}
 @endif
 @endif

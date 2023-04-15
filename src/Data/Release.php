@@ -11,21 +11,46 @@ use Spatie\LaravelData\Data;
 
 final class Release extends Data
 {
-    public readonly Collection $sections;
+    private readonly Collection $sections;
 
     public function __construct(
-        public readonly string $version,
-        public readonly ?Carbon $date = null,
-        public readonly ?string $description = null,
-        public readonly ?string $tagReference = null,
+        private readonly string $version,
+        private readonly ?Carbon $date = null,
+        private readonly ?string $description = null,
+        private readonly ?string $tagReference = null,
         ?Collection $sections = null,
     ) {
         $this->sections = $sections ?? collect();
     }
 
+    public function getVersion(): string
+    {
+        return $this->version;
+    }
+
+    public function getDate(): ?Carbon
+    {
+        return $this->date;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function getTagReference(): ?string
+    {
+        return $this->tagReference;
+    }
+
+    public function getSections(): Collection
+    {
+        return $this->sections;
+    }
+
     public function setSection(Section $section): void
     {
-        $this->sections->put($section->type, $section);
+        $this->sections->put($section->getType(), $section);
     }
 
     public function isUnreleased(): bool

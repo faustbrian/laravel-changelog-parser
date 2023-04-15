@@ -6,9 +6,9 @@ namespace PreemStudio\ChangelogParser\Tokenizer\Node;
 
 final class Link extends AbstractNode
 {
-    public readonly string $label;
+    private readonly string $label;
 
-    public readonly string $destination;
+    private readonly string $destination;
 
     public function __construct(string $text)
     {
@@ -18,5 +18,15 @@ final class Link extends AbstractNode
 
         $this->label = $matches[1];
         $this->destination = $matches[2];
+    }
+
+    public function getLabel(): string
+    {
+        return $this->label;
+    }
+
+    public function getDestination(): string
+    {
+        return $this->destination;
     }
 }

@@ -26,7 +26,7 @@ final class CommonChangelogParser implements Parser
         [$description, $releases] = NodeParser::parse($nodes = $this->tokenizer->tokenize($content));
 
         foreach ($releases as $release) {
-            if ($release->version === SectionEnum::UNRELEASED->value) {
+            if ($release->getVersion() === SectionEnum::UNRELEASED->value) {
                 throw new Exception('Common Changelog does not have an Unreleased section at the top of the changelog.');
             }
         }

@@ -10,15 +10,20 @@ use Spatie\LaravelData\Data;
 final class Changelog extends Data
 {
     public function __construct(
-        public readonly Collection $releases,
-        public readonly ?string $description = null,
+        private readonly Collection $releases,
+        private readonly ?string $description = null,
     ) {
         //
     }
 
-    public function hasReleases(): bool
+    public function getReleases(): Collection
     {
-        return $this->releases->isNotEmpty();
+        return $this->releases;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
     }
 
     public function getUnreleased(): ?Release
@@ -29,5 +34,10 @@ final class Changelog extends Data
     public function getLatestRelease(): Release
     {
         return $this->releases->first();
+    }
+
+    public function hasReleases(): bool
+    {
+        return $this->releases->isNotEmpty();
     }
 }

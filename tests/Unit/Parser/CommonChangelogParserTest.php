@@ -16,30 +16,30 @@ beforeEach(function (): void {
 
 it('should parse the changelog', function (): void {
     expect($this->changelog->hasReleases())->toBeTrue();
-    expect($this->changelog->description)->toBeString();
-    expect($this->changelog->releases)->toHaveCount(42);
+    expect($this->changelog->getDescription())->toBeString();
+    expect($this->changelog->getReleases())->toHaveCount(42);
     expect($this->changelog->getLatestRelease())->toBeInstanceOf(Release::class);
     expect($this->changelog->getUnreleased())->toBeNull();
-    expect($this->changelog->getLatestRelease()->tagReference)->not()->toBeNull();
+    expect($this->changelog->getLatestRelease()->getTagReference())->not()->toBeNull();
 });
 
 it('should get the latest release', function (): void {
     $release = $this->changelog->getLatestRelease();
 
-    expect($release->version)->toBe('8.0.0');
+    expect($release->getVersion())->toBe('8.0.0');
     expect($release->isUnreleased())->toBeFalse();
-    expect($release->date)->toBeInstanceOf(DateTimeInterface::class);
-    expect($release->date->format('Y-m-d'))->toBe('2022-03-25');
-    expect($release->sections)->toHaveCount(1);
-    expect($release->sections->get(SectionEnum::CHANGED->value))->toBeInstanceOf(Section::class);
-    expect($release->tagReference)->not()->toBeNull();
+    expect($release->getDate())->toBeInstanceOf(DateTimeInterface::class);
+    expect($release->getDate()->format('Y-m-d'))->toBe('2022-03-25');
+    expect($release->getSections())->toHaveCount(1);
+    expect($release->getSections()->get(SectionEnum::CHANGED->value))->toBeInstanceOf(Section::class);
+    expect($release->getTagReference())->not()->toBeNull();
 });
 
 it('should get the requested section', function (): void {
-    $section = $this->changelog->getLatestRelease()->sections->get(SectionEnum::CHANGED->value);
+    $section = $this->changelog->getLatestRelease()->getSections()->get(SectionEnum::CHANGED->value);
 
-    expect($section->type)->toBe(SectionEnum::CHANGED->value);
-    expect($section->content)->toBeString();
+    expect($section->getType())->toBe(SectionEnum::CHANGED->value);
+    expect($section->getContent())->toBeString();
 });
 
 it('should throw an exception if the changelog contains an UNRELEASED section', function (): void {

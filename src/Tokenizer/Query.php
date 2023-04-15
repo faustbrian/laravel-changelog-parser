@@ -21,7 +21,9 @@ final class Query
 
     public function whereProperty(string $property, mixed $value): self
     {
-        $this->filters[] = fn (Node $node) => $node->{$property} === $value;
+        $propertyAccessor = 'get'.\ucfirst($property);
+
+        $this->filters[] = fn (Node $node) => $node->{$propertyAccessor}() === $value;
 
         return $this;
     }

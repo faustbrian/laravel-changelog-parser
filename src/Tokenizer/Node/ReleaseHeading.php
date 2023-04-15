@@ -8,9 +8,9 @@ use Carbon\Carbon;
 
 final class ReleaseHeading extends AbstractNode
 {
-    public readonly string $version;
+    private readonly string $version;
 
-    public readonly ?Carbon $date;
+    private readonly ?Carbon $date;
 
     public function __construct(string $text)
     {
@@ -24,5 +24,15 @@ final class ReleaseHeading extends AbstractNode
         } else {
             $this->date = null;
         }
+    }
+
+    public function getVersion(): string
+    {
+        return $this->version;
+    }
+
+    public function getDate(): ?Carbon
+    {
+        return $this->date;
     }
 }

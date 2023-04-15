@@ -10,8 +10,8 @@
 
 @if($configuration->includeTagReferences)
 @foreach ($releases as $release)
-@if ($release->tagReference)
-[{{ $release->version }}]: {{ $release->tagReference }}
+@if ($release->getTagReference())
+[{{ $release->getVersion() }}]: {{ $release->getTagReference() }}
 @endif
 @endforeach
 @endif

@@ -18,10 +18,10 @@ final class KeepAChangelogFormatter implements ChangelogFormatter
     {
         return View::make('changelog-parser::keep-a-changelog', [
             'configuration' => $configuration ?? new ChangelogFormatterConfiguration(),
-            'releases' => $changelog->releases
+            'releases' => $changelog->getReleases()
                 ->map(fn (Release $release): Release => SortReleaseSections::execute($release))
                 // Making sure that the 'Unreleased' section is always at the top.
-                ->sortBy(fn (Release $release) => $release->version !== SectionEnum::UNRELEASED->value),
+                ->sortBy(fn (Release $release) => $release->getVersion() !== SectionEnum::UNRELEASED->value),
         ])->render();
     }
 }

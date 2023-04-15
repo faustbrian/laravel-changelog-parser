@@ -20,14 +20,14 @@ final class ReleaseNormalizer
     {
         return SortReleasesByDate::execute($releases)->map(function (Release $release) use ($nodes): Release {
             return new Release(
-                $release->version,
-                $release->date,
-                $release->description,
+                $release->getVersion(),
+                $release->getDate(),
+                $release->getDescription(),
                 (new Query())
                     ->whereType(Reference::class)
-                    ->whereProperty('label', $release->version)
-                    ->find($nodes)?->destination,
-                $release->sections,
+                    ->whereProperty('label', $release->getVersion())
+                    ->find($nodes)?->getDestination(),
+                $release->getSections(),
             );
         });
     }

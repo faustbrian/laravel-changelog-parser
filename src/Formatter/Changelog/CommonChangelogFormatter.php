@@ -17,7 +17,7 @@ final class CommonChangelogFormatter implements ChangelogFormatter
     {
         return View::make('changelog-parser::common-changelog', [
             'configuration' => $configuration ?? new ChangelogFormatterConfiguration(),
-            'releases' => $changelog->releases->map(fn (Release $release): Release => SortReleaseSections::execute($release)),
+            'releases' => $changelog->getReleases()->map(fn (Release $release): Release => SortReleaseSections::execute($release)),
         ])->render();
     }
 }
