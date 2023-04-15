@@ -23,9 +23,6 @@
 
 This project was created by, and is maintained by [Preem Studio](https://github.com/PreemStudio), and is a package to easily parse CHANGELOG files with Laravel. Be sure to browse through the [changelog](CHANGELOG.md), [code of conduct](.github/CODE_OF_CONDUCT.md), [contribution guidelines](.github/CONTRIBUTING.md), [license](LICENSE), and [security policy](.github/SECURITY.md).
 
-> **Note**
-> This package is based on [vdhicts/keepachangelog-parser](https://github.com/vdhicts/keepachangelog-parser).
-
 ## Installation
 
 > **Note**
