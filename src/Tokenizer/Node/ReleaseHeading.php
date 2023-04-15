@@ -12,9 +12,9 @@ final class ReleaseHeading extends AbstractNode
 
     public readonly ?Carbon $date;
 
-    public function __construct(int $lineNumber, string $text)
+    public function __construct(string $text)
     {
-        parent::__construct($lineNumber, $text);
+        parent::__construct($text);
 
         $segments = \explode(' - ', $text);
         $this->version = \str_replace(['[', ']'], '', $segments[0]);

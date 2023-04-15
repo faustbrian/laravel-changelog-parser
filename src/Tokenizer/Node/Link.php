@@ -8,15 +8,15 @@ final class Link extends AbstractNode
 {
     public readonly string $label;
 
-    public readonly string $href;
+    public readonly string $destination;
 
-    public function __construct(int $lineNumber, string $text)
+    public function __construct(string $text)
     {
-        parent::__construct($lineNumber, $text);
+        parent::__construct($text);
 
         \preg_match('/^\[(.*)\]\((.*)\)$/', $text, $matches);
 
         $this->label = $matches[1];
-        $this->href = $matches[2];
+        $this->destination = $matches[2];
     }
 }

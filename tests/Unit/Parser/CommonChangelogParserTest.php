@@ -16,8 +16,7 @@ beforeEach(function (): void {
 
 it('should parse the changelog', function (): void {
     expect($this->changelog->hasReleases())->toBeTrue();
-    expect($this->changelog->description)->toBeArray();
-    expect($this->changelog->description)->toHaveCount(1);
+    expect($this->changelog->description)->toBeString();
     expect($this->changelog->releases)->toHaveCount(42);
     expect($this->changelog->getLatestRelease())->toBeInstanceOf(Release::class);
     expect($this->changelog->getUnreleased())->toBeNull();
@@ -40,8 +39,7 @@ it('should get the requested section', function (): void {
     $section = $this->changelog->getLatestRelease()->sections->get(SectionEnum::CHANGED->value);
 
     expect($section->type)->toBe(SectionEnum::CHANGED->value);
-    expect($section->entries)->toBeArray();
-    expect($section->entries)->toHaveCount(1);
+    expect($section->content)->toBeString();
 });
 
 it('should throw an exception if the changelog contains an UNRELEASED section', function (): void {

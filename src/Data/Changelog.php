@@ -13,7 +13,7 @@ final class Changelog extends Data
 
     public function __construct(
         public readonly Collection $releases,
-        public readonly array $description = [],
+        public ?string $description = null,
     ) {
         //
     }

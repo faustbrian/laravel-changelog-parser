@@ -26,7 +26,7 @@ final class ReleaseNormalizer
                 (new Query())
                     ->whereType(Reference::class)
                     ->whereProperty('label', $release->version)
-                    ->find($nodes)?->href,
+                    ->find($nodes)?->destination,
                 $release->sections,
             );
         });

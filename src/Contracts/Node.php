@@ -8,8 +8,6 @@ interface Node
 {
     public function getText(): string;
 
-    public function getLineNumber(): int;
-
     public function isHeading(): bool;
 
     public function isText(): bool;
@@ -33,4 +31,6 @@ interface Node
     public function isReleaseHeading(): bool;
 
     public function isThematicBreak(): bool;
+
+    public function isUnorderedList(): bool;
 }

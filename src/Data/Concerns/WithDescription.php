@@ -8,11 +8,11 @@ trait WithDescription
 {
     public function setDescription(array $description): void
     {
-        $this->description[] = $description;
+        $this->description = $description;
     }
 
     public function appendDescription(string $description): void
     {
-        $this->description[] = $description;
+        $this->description .= $description."\n";
     }
 }

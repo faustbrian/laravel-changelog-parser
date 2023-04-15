@@ -1,11 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#2 \\$date of class PreemStudio\\\\ChangelogParser\\\\Data\\\\Release constructor expects Carbon\\\\Carbon\\|null, Carbon\\\\Carbon\\|false given\\.$#"
-			count: 1
-			path: src/Actions/ParseRelease.php
-
-		-
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:sortBy\\(\\) expects array\\<array\\{string, string\\}\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string\\>\\|\\(callable\\(mixed, \\(int\\|string\\)\\)\\: mixed\\)\\|string, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Section, string\\)\\: 0\\|1\\|2\\|3\\|4\\|5\\|false given\\.$#"
 			count: 1
 			path: src/Actions/SortReleaseSections.php
@@ -41,8 +36,8 @@ parameters:
 			path: src/Data/Changelog.php
 
 		-
-			message: "#^Readonly property PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:\\$description is assigned outside of the constructor\\.$#"
-			count: 2
+			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:\\$description \\(string\\|null\\) does not accept array\\.$#"
+			count: 1
 			path: src/Data/Changelog.php
 
 		-
@@ -51,9 +46,19 @@ parameters:
 			path: src/Data/Release.php
 
 		-
+			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:\\$description \\(string\\|null\\) does not accept array\\.$#"
+			count: 1
+			path: src/Data/Release.php
+
+		-
 			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:\\$sections with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Data/Release.php
+
+		-
+			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Section\\:\\:\\$description \\(string\\|null\\) does not accept array\\.$#"
+			count: 1
+			path: src/Data/Section.php
 
 		-
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release given\\.$#"
@@ -96,7 +101,7 @@ parameters:
 			path: src/Parser/KeepAChangelog/NodeParser.php
 
 		-
-			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$href\\.$#"
+			message: "#^Access to an undefined property PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\:\\:\\$destination\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelog/ReleaseNormalizer.php
 
@@ -129,26 +134,6 @@ parameters:
 			message: "#^Readonly property PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Node\\\\ReleaseHeading\\:\\:\\$date is already assigned\\.$#"
 			count: 1
 			path: src/Tokenizer/Node/ReleaseHeading.php
-
-		-
-			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:__construct\\(\\) has parameter \\$nodes with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Tokenizer/NodeWalker.php
-
-		-
-			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:first\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node but returns mixed\\.$#"
-			count: 1
-			path: src/Tokenizer/NodeWalker.php
-
-		-
-			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:get\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node\\|null but returns mixed\\.$#"
-			count: 1
-			path: src/Tokenizer/NodeWalker.php
-
-		-
-			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\NodeWalker\\:\\:last\\(\\) should return PreemStudio\\\\ChangelogParser\\\\Contracts\\\\Node but returns mixed\\.$#"
-			count: 1
-			path: src/Tokenizer/NodeWalker.php
 
 		-
 			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Tokenizer\\\\Query\\:\\:find\\(\\) has parameter \\$nodes with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"

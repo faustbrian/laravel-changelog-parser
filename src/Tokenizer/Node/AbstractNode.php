@@ -8,21 +8,14 @@ use PreemStudio\ChangelogParser\Contracts\Node;
 
 abstract class AbstractNode implements Node
 {
-    public function __construct(
-        private readonly int $lineNumber,
-        private readonly string $text,
-    ) {
+    public function __construct(private readonly string $text)
+    {
         //
     }
 
     public function getText(): string
     {
         return $this->text;
-    }
-
-    public function getLineNumber(): int
-    {
-        return $this->lineNumber;
     }
 
     public function isHeading(): bool
@@ -57,6 +50,10 @@ abstract class AbstractNode implements Node
         }
 
         if ($this->isReference()) {
+            return false;
+        }
+
+        if ($this->isUnorderedList()) {
             return false;
         }
 
@@ -111,5 +108,10 @@ abstract class AbstractNode implements Node
     public function isThematicBreak(): bool
     {
         return $this instanceof ThematicBreak;
+    }
+
+    public function isUnorderedList(): bool
+    {
+        return $this instanceof UnorderedList;
     }
 }

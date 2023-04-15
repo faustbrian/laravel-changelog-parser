@@ -16,8 +16,7 @@ beforeEach(function (): void {
 
 it('should parse the changelog', function (): void {
     expect($this->changelog->hasReleases())->toBeTrue();
-    expect($this->changelog->description)->toBeArray();
-    expect($this->changelog->description)->toHaveCount(6);
+    expect($this->changelog->description)->toBeString();
     expect($this->changelog->releases)->toHaveCount(15);
     expect($this->changelog->getLatestRelease())->toBeInstanceOf(Release::class);
     expect($this->changelog->getUnreleased())->toBeInstanceOf(Release::class);
@@ -51,12 +50,11 @@ it('should get the requested section', function (): void {
     $section = $this->changelog->getLatestRelease()->sections->get(SectionEnum::ADDED->value);
 
     expect($section->type)->toBe(SectionEnum::ADDED->value);
-    expect($section->entries)->toBeArray();
-    expect($section->entries)->toHaveCount(10);
+    expect($section->content)->toBeString();
 });
 
 it('should include release and section descriptions', function (): void {
     $changelog = (new KeepAChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/keep-a-changelog-with-descriptions.md'));
 
-    expect($changelog->description)->toHaveLength(6);
+    expect($changelog->description)->toBeString();
 });

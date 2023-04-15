@@ -48,18 +48,18 @@ final class NodeParser
 
                 $currentSection = [
                     'type' => $node->getText(),
-                    'entries' => [],
-                    'description' => [],
+                    'content' => null,
+                    'description' => null,
                 ];
             }
 
-            if ($node->isListItem()) {
-                $currentSection['entries'][] = $node->getText();
+            if ($node->isUnorderedList()) {
+                $currentSection['content'] = $node->getText();
             }
 
             if ($node->isText()) {
                 if ($currentSection) {
-                    $currentSection['description'][] = $node->getText();
+                    $currentSection['description'] .= $node->getText()."\n";
 
                     continue;
                 }
@@ -86,6 +86,9 @@ final class NodeParser
             $releases[] = $currentRelease;
         }
 
-        return [$changelogDescription, $releases];
+        return [
+            \implode("\n", $changelogDescription),
+            $releases,
+        ];
     }
 }

@@ -12,8 +12,8 @@ final class Section extends Data
 
     public function __construct(
         public readonly string $type,
-        public readonly array $entries,
-        public array $description = [],
+        public readonly string $content,
+        public ?string $description = null,
     ) {
         //
     }
