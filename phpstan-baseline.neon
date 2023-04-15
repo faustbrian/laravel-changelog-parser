@@ -36,17 +36,7 @@ parameters:
 			path: src/Data/Changelog.php
 
 		-
-			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Changelog\\:\\:\\$description \\(string\\|null\\) does not accept array\\.$#"
-			count: 1
-			path: src/Data/Changelog.php
-
-		-
 			message: "#^Method PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:__construct\\(\\) has parameter \\$sections with generic class Illuminate\\\\Support\\\\Collection but does not specify its types\\: TKey, TValue$#"
-			count: 1
-			path: src/Data/Release.php
-
-		-
-			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:\\$description \\(string\\|null\\) does not accept array\\.$#"
 			count: 1
 			path: src/Data/Release.php
 
@@ -54,11 +44,6 @@ parameters:
 			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\:\\:\\$sections with generic class Illuminate\\\\Support\\\\Collection does not specify its types\\: TKey, TValue$#"
 			count: 1
 			path: src/Data/Release.php
-
-		-
-			message: "#^Property PreemStudio\\\\ChangelogParser\\\\Data\\\\Section\\:\\:\\$description \\(string\\|null\\) does not accept array\\.$#"
-			count: 1
-			path: src/Data/Section.php
 
 		-
 			message: "#^Parameter \\#1 \\$callback of method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:map\\(\\) expects callable\\(mixed, \\(int\\|string\\)\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release, Closure\\(PreemStudio\\\\ChangelogParser\\\\Data\\\\Release\\)\\: PreemStudio\\\\ChangelogParser\\\\Data\\\\Release given\\.$#"

@@ -22,6 +22,7 @@ final class NodeParser
 
         /** @var Release */
         $currentRelease = null;
+        $currentReleaseDescription = null;
 
         /** @var array */
         $currentSection = null;
@@ -35,7 +36,13 @@ final class NodeParser
                 }
 
                 if (null !== $currentRelease) {
-                    $releases[] = $currentRelease;
+                    $releases[] = new Release(
+                        $currentRelease->version,
+                        $currentRelease->date,
+                        $currentReleaseDescription,
+                        $currentRelease->tagReference,
+                        $currentRelease->sections,
+                    );
                 }
 
                 $currentRelease = new Release($node->version, $node->date);
@@ -65,7 +72,7 @@ final class NodeParser
                 }
 
                 if ($currentRelease && empty($currentSection)) {
-                    $currentRelease->appendDescription($node->getText());
+                    $currentReleaseDescription .= $node->getText();
 
                     continue;
                 }
@@ -83,7 +90,13 @@ final class NodeParser
         }
 
         if ($currentRelease) {
-            $releases[] = $currentRelease;
+            $releases[] = new Release(
+                $currentRelease->version,
+                $currentRelease->date,
+                $currentReleaseDescription,
+                $currentRelease->tagReference,
+                $currentRelease->sections,
+            );
         }
 
         return [
