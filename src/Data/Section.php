@@ -16,7 +16,7 @@ final class Section extends Data
         public readonly ?string $description = null,
     ) {
         $this->items = \array_map(
-            fn (string $item) => \trim(\mb_substr($item, 1)),
+            fn (string $item) => new SectionItem(\trim(\mb_substr($item, 1))),
             \array_filter(
                 \explode("\n", $this->content),
                 fn (string $item) => \str_starts_with($item, '-'),
@@ -34,6 +34,9 @@ final class Section extends Data
         return $this->content;
     }
 
+    /**
+     * @return array<int, SectionItem>
+     */
     public function getItems(): array
     {
         return $this->items;
