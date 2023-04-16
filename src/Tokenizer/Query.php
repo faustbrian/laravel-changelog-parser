@@ -35,11 +35,23 @@ final class Query
         return $this;
     }
 
+    /**
+     * @param Collection<int, Node> $nodes
+     */
     public function find(Collection $nodes): ?Node
     {
-        return $this->findAll($nodes)->first();
+        $result = $this->findAll($nodes)->first();
+
+        if ($result instanceof Node) {
+            return $result;
+        }
+
+        return null;
     }
 
+    /**
+     * @param Collection<int, Node> $nodes
+     */
     public function findAll(Collection $nodes): Collection
     {
         foreach ($this->filters as $filter) {

@@ -13,6 +13,9 @@ final class Release extends Data
 {
     public readonly Collection $sections;
 
+    /**
+     * @param Collection<int, Section> $sections
+     */
     public function __construct(
         public readonly string $version,
         public readonly ?Carbon $date = null,
@@ -43,6 +46,9 @@ final class Release extends Data
         return $this->tagReference;
     }
 
+    /**
+     * @return Collection<int, Section>
+     */
     public function getSections(): Collection
     {
         return $this->sections;

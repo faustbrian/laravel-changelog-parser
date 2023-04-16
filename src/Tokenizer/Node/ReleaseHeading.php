@@ -20,8 +20,15 @@ final class ReleaseHeading extends AbstractNode
         $this->version = \str_replace(['[', ']'], '', $segments[0]);
 
         if (\count($segments) >= 2) {
-            $this->date = Carbon::createFromFormat('Y-m-d', $segments[1]);
+            $releaseDate = Carbon::createFromFormat('Y-m-d', $segments[1]);
+
+            if ($releaseDate === false) {
+                throw new \InvalidArgumentException('Invalid release date format');
+            }
+
+            $this->date = $releaseDate;
         } else {
+            /** @phpstan-ignore-next-line */
             $this->date = null;
         }
     }

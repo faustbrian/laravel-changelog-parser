@@ -14,19 +14,23 @@ use PreemStudio\ChangelogParser\Tokenizer\Query;
 final class ReleaseNormalizer
 {
     /**
-     * @param Collection<int, Node> $nodes
+     * @param  Collection<int, Node>    $nodes
+     * @return Collection<int, Release>
      */
     public static function normalize(array $releases, Collection $nodes): Collection
     {
+        /** @phpstan-ignore-next-line */
         return SortReleasesByDate::execute($releases)->map(function (Release $release) use ($nodes): Release {
+            $reference = (new Query())
+                ->whereType(Reference::class)
+                ->whereProperty('label', $release->getVersion())
+                ->find($nodes);
+
             return new Release(
                 $release->getVersion(),
                 $release->getDate(),
                 $release->getDescription(),
-                (new Query())
-                    ->whereType(Reference::class)
-                    ->whereProperty('label', $release->getVersion())
-                    ->find($nodes)?->getDestination(),
+                $reference instanceof Reference ? $reference->getDestination() : null,
                 $release->getSections(),
             );
         });

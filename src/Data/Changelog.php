@@ -9,6 +9,9 @@ use Spatie\LaravelData\Data;
 
 final class Changelog extends Data
 {
+    /**
+     * @param Collection<int, Release> $releases
+     */
     public function __construct(
         public readonly Collection $releases,
         public readonly ?string $description = null,
@@ -16,6 +19,9 @@ final class Changelog extends Data
         //
     }
 
+    /**
+     * @return Collection<int, Release>
+     */
     public function getReleases(): Collection
     {
         return $this->releases;
@@ -31,7 +37,7 @@ final class Changelog extends Data
         return $this->releases->filter(fn (Release $release): bool => $release->isUnreleased())->first();
     }
 
-    public function getLatestRelease(): Release
+    public function getLatestRelease(): ?Release
     {
         return $this->releases->first();
     }

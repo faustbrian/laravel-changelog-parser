@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PreemStudio\ChangelogParser\Actions;
 
 use PreemStudio\ChangelogParser\Data\Release;
-use PreemStudio\ChangelogParser\Data\Section;
 use PreemStudio\ChangelogParser\Enum\SectionEnum;
 
 final class SortReleaseSections
@@ -24,7 +23,8 @@ final class SortReleaseSections
         return new Release(
             date: $release->getDate(),
             description: $release->getDescription(),
-            sections: $release->getSections()->sortBy(fn (Section $section, string $key) => \array_search($key, self::ORDER, true)),
+            /** @phpstan-ignore-next-line */
+            sections: $release->getSections()->sortBy(fn ($_, string $key) => \array_search($key, self::ORDER, true)),
             tagReference: $release->getTagReference(),
             version: $release->getVersion(),
         );

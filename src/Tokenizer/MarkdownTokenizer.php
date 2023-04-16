@@ -24,6 +24,9 @@ use PreemStudio\ChangelogParser\Tokenizer\Node\UnorderedList;
 
 final class MarkdownTokenizer implements Tokenizer
 {
+    /**
+     * @return Collection<int, Node>
+     */
     public function tokenize(string $content): Collection
     {
         /** @var Node[] */
@@ -44,7 +47,7 @@ final class MarkdownTokenizer implements Tokenizer
                     \str_starts_with($line, '### ') => new ChangeTypeHeading(\trim(\mb_substr($line, 3))),
                     \str_starts_with($line, '-') => new UnorderedList($line),
                     (bool) \preg_match('/^\[(.*)\]\((.*)\)$/', $line) => new Link(\trim($line)),
-                    \preg_match('/^<!--(.*)-->$/s', $line, $matches) => new Flag(\trim($matches[1])),
+                    (bool) \preg_match('/^<!--(.*)-->$/s', $line) => new Flag(\trim($line)),
                     empty($line) => new LineBreak("\n"),
                     default => new Paragraph(\rtrim($line)),
                 };

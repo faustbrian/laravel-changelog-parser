@@ -8,6 +8,9 @@ use Illuminate\Support\Collection;
 use PreemStudio\ChangelogParser\Contracts\Node;
 use PreemStudio\ChangelogParser\Data\Release;
 use PreemStudio\ChangelogParser\Data\Section;
+use PreemStudio\ChangelogParser\Tokenizer\Node\ChangeTypeHeading;
+use PreemStudio\ChangelogParser\Tokenizer\Node\ReleaseHeading;
+use PreemStudio\ChangelogParser\Tokenizer\Node\UnorderedList;
 
 final class NodeParser
 {
@@ -28,7 +31,7 @@ final class NodeParser
         $currentSection = null;
 
         foreach ($nodes as $node) {
-            if ($node->isReleaseHeading()) {
+            if ($node instanceof ReleaseHeading) {
                 if (null !== $currentSection) {
                     $currentRelease->setSection(new Section(...$currentSection));
 
@@ -48,7 +51,7 @@ final class NodeParser
                 $currentRelease = new Release($node->getVersion(), $node->getDate());
             }
 
-            if ($node->isChangeTypeHeading()) {
+            if ($node instanceof ChangeTypeHeading) {
                 if (null !== $currentSection) {
                     $currentRelease->setSection(new Section(...$currentSection));
                 }
@@ -60,7 +63,7 @@ final class NodeParser
                 ];
             }
 
-            if ($node->isUnorderedList()) {
+            if ($node instanceof UnorderedList) {
                 $currentSection['content'] = $node->getText();
             }
 
@@ -71,12 +74,14 @@ final class NodeParser
                     continue;
                 }
 
+                /** @phpstan-ignore-next-line */
                 if ($currentRelease && empty($currentSection)) {
                     $currentReleaseDescription .= $node->getText();
 
                     continue;
                 }
 
+                /** @phpstan-ignore-next-line */
                 if (empty($currentRelease) && empty($currentSection)) {
                     $changelogDescription[] = $node->getText();
 
@@ -89,6 +94,7 @@ final class NodeParser
             $currentRelease->setSection(new Section(...$currentSection));
         }
 
+        /** @phpstan-ignore-next-line */
         if ($currentRelease) {
             $releases[] = new Release(
                 $currentRelease->getVersion(),
