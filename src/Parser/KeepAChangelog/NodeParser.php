@@ -49,6 +49,7 @@ final class NodeParser
                 }
 
                 $currentRelease = new Release($node->getVersion(), $node->getDate());
+                $currentReleaseDescription = null;
             }
 
             if ($node instanceof ChangeTypeHeading) {
