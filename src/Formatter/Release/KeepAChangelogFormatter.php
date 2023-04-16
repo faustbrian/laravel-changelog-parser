@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PreemStudio\ChangelogParser\Formatter\Release;
 
 use Illuminate\Support\Facades\View;
-use PreemStudio\ChangelogParser\Actions\SortReleaseSections;
 use PreemStudio\ChangelogParser\Configuration\ReleaseFormatterConfiguration;
 use PreemStudio\ChangelogParser\Contracts\ReleaseFormatter;
 use PreemStudio\ChangelogParser\Data\Release;
@@ -16,7 +15,7 @@ final class KeepAChangelogFormatter implements ReleaseFormatter
     {
         return View::make('changelog-parser::keep-a-changelog-release', [
             'configuration' => $configuration ?? new ReleaseFormatterConfiguration(),
-            'release' => SortReleaseSections::execute($release),
+            'release' => $release,
         ])->render();
     }
 }

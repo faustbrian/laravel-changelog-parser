@@ -11,7 +11,16 @@ use Spatie\LaravelData\Data;
 
 final class Release extends Data
 {
-    public readonly Collection $sections;
+    private const SECTION_ORDER = [
+        SectionEnum::ADDED->value,
+        SectionEnum::CHANGED->value,
+        SectionEnum::DEPRECATED->value,
+        SectionEnum::REMOVED->value,
+        SectionEnum::FIXED->value,
+        SectionEnum::SECURITY->value,
+    ];
+
+    public Collection $sections;
 
     /**
      * @param Collection<int, Section> $sections
@@ -24,6 +33,8 @@ final class Release extends Data
         ?Collection $sections = null,
     ) {
         $this->sections = $sections ?? collect();
+
+        $this->sortSections();
     }
 
     public function getVersion(): string
@@ -57,10 +68,17 @@ final class Release extends Data
     public function setSection(Section $section): void
     {
         $this->sections->put($section->getType(), $section);
+
+        $this->sortSections();
     }
 
     public function isUnreleased(): bool
     {
         return $this->version === SectionEnum::UNRELEASED->value;
+    }
+
+    private function sortSections(): void
+    {
+        $this->sections = $this->sections->sortBy(fn ($_, string $key) => \array_search($key, self::SECTION_ORDER, true));
     }
 }
