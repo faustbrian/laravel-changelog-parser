@@ -34,6 +34,11 @@ final class Section extends Data
         return $this->content;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
     /**
      * @return array<int, SectionItem>
      */
