@@ -14,6 +14,11 @@ final class SectionItem extends Data
         //
     }
 
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
     public function toHtml(): string
     {
         return MarkdownConverter::toString($this->content);
