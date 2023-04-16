@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.3.7] - 2023-04-16
+### Fixed
+- reset `$currentReleaseDescription` when a new release is found
+
+
 ## [1.3.6] - 2023-04-16
 ### Added
 - implement `getDescription` for `Section`
@@ -73,7 +78,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.0 - 2023-04-14
 
-[Unreleased]: https://github.com/PreemStudio/package_slug/compare/1.3.6...HEAD
+[Unreleased]: https://github.com/PreemStudio/package_slug/compare/1.3.7...HEAD
+[1.3.7]: https://github.com/PreemStudio/package_slug/compare/1.3.6...1.3.7
 [1.3.6]: https://github.com/PreemStudio/package_slug/compare/1.3.5...1.3.6
 [1.3.5]: https://github.com/PreemStudio/package_slug/compare/1.3.4...1.3.5
 [1.3.4]: https://github.com/PreemStudio/package_slug/compare/1.3.3...1.3.4
