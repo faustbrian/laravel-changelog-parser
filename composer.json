@@ -1,0 +1,85 @@
+{
+    "name": "bombenprodukt/laravel-changelog-parser",
+    "description": "A package to easily parse CHANGELOG files with Laravel.",
+    "license": "MIT",
+    "keywords": [
+        "BombenProdukt",
+        "laravel",
+        "changelog-parser"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@bombenprodukt.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/bombenprodukt/laravel-changelog-parser",
+    "require": {
+        "php": "^8.2",
+        "illuminate/contracts": "^10.0",
+        "illuminate/support": "^10.0",
+        "league/commonmark": "^2.4",
+        "nesbot/carbon": "^2.66",
+        "bombenprodukt/laravel-package-powerpack": "^1.0",
+        "spatie/laravel-data": "^3.4",
+        "symfony/css-selector": "^6.2",
+        "symfony/dom-crawler": "^6.2"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.2",
+        "friendsofphp/php-cs-fixer": "^3.15",
+        "infection/infection": "^0.26.19",
+        "nunomaduro/collision": "^7.0",
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "pestphp/pest-plugin-watch": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "bombenprodukt/php-cs-fixer-config": "^1.0",
+        "spatie/laravel-ray": "^1.2",
+        "spatie/pest-plugin-snapshots": "^2.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "BombenProdukt\\ChangelogParser\\": "src",
+            "BombenProdukt\\ChangelogParser\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "ChangelogParser": "BombenProdukt\\ChangelogParser\\Facades\\ChangelogParser"
+            },
+            "providers": [
+                "BombenProdukt\\ChangelogParser\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
+}
