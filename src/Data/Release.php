@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Data;
 
+use BombenProdukt\ChangelogParser\Enum\SectionEnum;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use BombenProdukt\ChangelogParser\Enum\SectionEnum;
 use Spatie\LaravelData\Data;
 
 final class Release extends Data

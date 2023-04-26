@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Parser\KeepAChangelog;
 
-use Illuminate\Support\Collection;
 use BombenProdukt\ChangelogParser\Actions\SortReleasesByDate;
 use BombenProdukt\ChangelogParser\Contracts\Node;
 use BombenProdukt\ChangelogParser\Data\Release;
 use BombenProdukt\ChangelogParser\Tokenizer\Node\Reference;
 use BombenProdukt\ChangelogParser\Tokenizer\Query;
+use Illuminate\Support\Collection;
 
 final class ReleaseNormalizer
 {

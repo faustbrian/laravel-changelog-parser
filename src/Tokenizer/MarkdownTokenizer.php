@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Tokenizer;
 
-use Illuminate\Support\Collection;
-use League\CommonMark\Environment\Environment;
-use League\CommonMark\Node\Block\Document;
-use League\CommonMark\Node\StringContainerInterface;
-use League\CommonMark\Parser\MarkdownParser;
 use BombenProdukt\ChangelogParser\Contracts\Node;
 use BombenProdukt\ChangelogParser\Contracts\Tokenizer;
 use BombenProdukt\ChangelogParser\Tokenizer\Node\ChangeTypeHeading;
@@ -21,6 +16,11 @@ use BombenProdukt\ChangelogParser\Tokenizer\Node\Reference;
 use BombenProdukt\ChangelogParser\Tokenizer\Node\ReleaseHeading;
 use BombenProdukt\ChangelogParser\Tokenizer\Node\ThematicBreak;
 use BombenProdukt\ChangelogParser\Tokenizer\Node\UnorderedList;
+use Illuminate\Support\Collection;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Node\Block\Document;
+use League\CommonMark\Node\StringContainerInterface;
+use League\CommonMark\Parser\MarkdownParser;
 
 final class MarkdownTokenizer implements Tokenizer
 {

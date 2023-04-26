@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-use DateTimeInterface;
 use BombenProdukt\ChangelogParser\Data\Release;
 use BombenProdukt\ChangelogParser\Data\Section;
 use BombenProdukt\ChangelogParser\Enum\SectionEnum;
 use BombenProdukt\ChangelogParser\Parser\KeepAChangelogParser;
+use DateTimeInterface;
 
 beforeEach(function (): void {
     $this->changelog = (new KeepAChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/keep-a-changelog.md'));

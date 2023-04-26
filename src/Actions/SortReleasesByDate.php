@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Actions;
 
-use Illuminate\Support\Collection;
 use BombenProdukt\ChangelogParser\Data\Release;
+use Illuminate\Support\Collection;
 
 final class SortReleasesByDate
 {

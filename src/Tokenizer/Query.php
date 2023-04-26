@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Tokenizer;
 
+use BombenProdukt\ChangelogParser\Contracts\Node;
 use Closure;
 use Illuminate\Support\Collection;
-use BombenProdukt\ChangelogParser\Contracts\Node;
 
 final class Query
 {

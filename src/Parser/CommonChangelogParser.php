@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Parser;
 
-use Exception;
 use BombenProdukt\ChangelogParser\Contracts\Parser;
 use BombenProdukt\ChangelogParser\Data\Changelog;
 use BombenProdukt\ChangelogParser\Enum\SectionEnum;
 use BombenProdukt\ChangelogParser\Parser\KeepAChangelog\NodeParser;
 use BombenProdukt\ChangelogParser\Parser\KeepAChangelog\ReleaseNormalizer;
 use BombenProdukt\ChangelogParser\Tokenizer\MarkdownTokenizer;
+use Exception;
 
 final class CommonChangelogParser implements Parser
 {
