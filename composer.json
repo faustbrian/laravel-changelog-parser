@@ -14,7 +14,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/bombenprodukt/laravel-changelog-parser",
+    "homepage": "https://github.com/faustbrian/laravel-changelog-parser",
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
