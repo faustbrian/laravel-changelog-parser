@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/laravel-changelog-parser/actions">
-        <img src="https://badge.sh/github/check-runs/bombenprodukt/laravel-changelog-parser" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-changelog-parser">
-        <img src="https://badge.sh/packagist/downloads/bombenprodukt/laravel-changelog-parser" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-changelog-parser">
-        <img src="https://badge.sh/packagist/version/bombenprodukt/laravel-changelog-parser" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-changelog-parser">
-        <img src="https://badge.sh/packagist/license/bombenprodukt/laravel-changelog-parser" alt="License" />
-    </a>
-</p>
 
 ## About Laravel Changelog Parser
 
