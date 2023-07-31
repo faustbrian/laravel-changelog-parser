@@ -66,19 +66,28 @@ final readonly class KeepAChangelogParser implements Parser
 
     private function parseRelease(Crawler $parsedRelease): Release
     {
-        $releaseData = \explode(' - ', $parsedRelease->text());
+        $releaseData = $parsedRelease->text();
+
+        $hasBeenYanked = false;
+
+        if (\str_contains($parsedRelease->text(), '[YANKED]')) {
+            $releaseData = \trim(\str_replace('[YANKED]', '', $releaseData));
+
+            $hasBeenYanked = true;
+        }
+
+        $releaseData = \explode(' - ', $releaseData);
 
         $version = \str_replace(['[', ']'], '', $releaseData[0]);
         $date = \count($releaseData) >= 2
             ? Carbon::createFromFormat('Y-m-d', $releaseData[1])
             : null;
 
-        // TODO: check yanked status
-
         return new Release(
-            $version,
-            $date,
-            $this->getDescription($parsedRelease->nextAll(), 'h2', 'h3'),
+            date: $date,
+            description: $this->getDescription($parsedRelease->nextAll(), 'h2', 'h3'),
+            isYanked: $hasBeenYanked,
+            version: $version,
         );
     }
 

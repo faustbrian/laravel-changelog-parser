@@ -31,11 +31,6 @@ parameters:
 			path: src/Formatter/Changelog/KeepAChangelogFormatter.php
 
 		-
-			message: "#^Class BombenProdukt\\\\ChangelogParser\\\\Data\\\\Release constructor invoked with 5 parameters, 1\\-4 required\\.$#"
-			count: 1
-			path: src/Parser/KeepAChangelog/ReleaseNormalizer.php
-
-		-
 			message: "#^Cannot call method saveHTML\\(\\) on DOMDocument\\|null\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelogParser.php
@@ -51,7 +46,7 @@ parameters:
 			path: src/Parser/KeepAChangelogParser.php
 
 		-
-			message: "#^Parameter \\#2 \\$date of class BombenProdukt\\\\ChangelogParser\\\\Data\\\\Release constructor expects DateTimeInterface\\|null, Illuminate\\\\Support\\\\Carbon\\|false\\|null given\\.$#"
+			message: "#^Parameter \\$date of class BombenProdukt\\\\ChangelogParser\\\\Data\\\\Release constructor expects DateTimeInterface\\|null, Illuminate\\\\Support\\\\Carbon\\|false\\|null given\\.$#"
 			count: 1
 			path: src/Parser/KeepAChangelogParser.php
 

@@ -10,8 +10,6 @@ use Illuminate\Support\Collection;
 
 final class Release
 {
-    public const UNRELEASED = 'Unreleased';
-
     private const SECTION_ORDER = [
         SectionEnum::ADDED->value,
         SectionEnum::CHANGED->value,
@@ -28,6 +26,7 @@ final class Release
         private readonly ?DateTimeInterface $date = null,
         private readonly ?string $description = null,
         private ?string $tagReference = null,
+        private readonly bool $isYanked = false,
     ) {
         $this->sections = collect();
     }
@@ -82,7 +81,12 @@ final class Release
 
     public function isUnreleased(): bool
     {
-        return $this->version === self::UNRELEASED;
+        return $this->version === SectionEnum::UNRELEASED->value;
+    }
+
+    public function isYanked(): bool
+    {
+        return $this->isYanked;
     }
 
     private function sortSections(): void
