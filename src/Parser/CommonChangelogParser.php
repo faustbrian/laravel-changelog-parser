@@ -10,10 +10,19 @@ use Exception;
 
 final class CommonChangelogParser implements Parser
 {
+    private array $disallowed = [
+        '## [Unreleased]',
+        '### Deprecated',
+        '### Security',
+        '[YANKED]',
+    ];
+
     public function parse(string $content): Changelog
     {
-        if (\str_contains($content, '## [Unreleased]')) {
-            throw new Exception('Common Changelog does not have an Unreleased section at the top of the changelog.');
+        foreach ($this->disallowed as $disallowed) {
+            if (\str_contains($content, $disallowed)) {
+                throw new Exception('Common Changelog does not support '.$disallowed.' sections.');
+            }
         }
 
         return (new KeepAChangelogParser())->parse($content);
