@@ -28,7 +28,6 @@ final class ReleaseHeading extends AbstractNode
 
             $this->date = $releaseDate;
         } else {
-            /** @phpstan-ignore-next-line */
             $this->date = null;
         }
     }

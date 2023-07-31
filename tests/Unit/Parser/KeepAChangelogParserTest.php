@@ -50,11 +50,19 @@ it('should get the requested section', function (): void {
     $section = $this->changelog->getLatestRelease()->getSections()->get(SectionEnum::ADDED->value);
 
     expect($section->getType())->toBe(SectionEnum::ADDED->value);
-    expect($section->getContent())->toBeString();
+    expect($section->getDescription())->toBeString();
 });
 
 it('should include release and section descriptions', function (): void {
     $changelog = (new KeepAChangelogParser())->parse(\file_get_contents(__DIR__.'/../../Fixtures/keep-a-changelog-with-descriptions.md'));
 
-    expect($changelog->getDescription())->toBeString();
+    expect($changelog->getDescription())->toBe(
+        '<p>All notable changes to this project will be documented in this file.</p><p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,<br>and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>',
+    );
+
+    foreach ($changelog->getReleases() as $release) {
+        expect($release->getDescription())->toBe(
+            '<p>In the latest release, I\'ve added support for commit message and description suggestions via an integration with OpenAI. Commit looks at all of your changes, and feeds that into the machine with a bit of prompt-tuning to get back a commit message that does a surprisingly good job at describing the intent of your changes.</p><p>It\'s also been a pretty helpful way to remind myself what the hell I was working on at the end of the day yesterday when I get back to my computer and realize I didn\'t commit any of my work.</p><p><a href="https://google.com">Some release description.</a></p><p>In the latest release, I\'ve added support for commit message and description suggestions via an integration with OpenAI. Commit looks at all of your changes, and feeds that into the machine with a bit of prompt-tuning to get back a commit message that does a surprisingly good job at describing the intent of your changes.</p><p>It\'s also been a pretty helpful way to remind myself what the hell I was working on at the end of the day yesterday when I get back to my computer and realize I didn\'t commit any of my work.</p>',
+        );
+    }
 });

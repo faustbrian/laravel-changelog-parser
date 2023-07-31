@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace BombenProdukt\ChangelogParser\Data;
 
 use BombenProdukt\ChangelogParser\Enum\SectionEnum;
-use Carbon\Carbon;
+use DateTimeInterface;
 use Illuminate\Support\Collection;
-use Spatie\LaravelData\Data;
 
-final class Release extends Data
+final class Release
 {
+    public const UNRELEASED = 'Unreleased';
+
     private const SECTION_ORDER = [
         SectionEnum::ADDED->value,
         SectionEnum::CHANGED->value,
@@ -20,21 +21,15 @@ final class Release extends Data
         SectionEnum::SECURITY->value,
     ];
 
-    public Collection $sections;
+    private Collection $sections;
 
-    /**
-     * @param Collection<int, Section> $sections
-     */
     public function __construct(
-        public readonly string $version,
-        public readonly ?Carbon $date = null,
-        public readonly ?string $description = null,
-        public readonly ?string $tagReference = null,
-        ?Collection $sections = null,
+        private readonly string $version,
+        private readonly ?DateTimeInterface $date = null,
+        private readonly ?string $description = null,
+        private ?string $tagReference = null,
     ) {
-        $this->sections = $sections ?? collect();
-
-        $this->sortSections();
+        $this->sections = collect();
     }
 
     public function getVersion(): string
@@ -42,7 +37,7 @@ final class Release extends Data
         return $this->version;
     }
 
-    public function getDate(): ?Carbon
+    public function getDate(): ?DateTimeInterface
     {
         return $this->date;
     }
@@ -57,24 +52,37 @@ final class Release extends Data
         return $this->tagReference;
     }
 
-    /**
-     * @return Collection<int, Section>
-     */
+    public function setTagReference(?string $tagReference): void
+    {
+        $this->tagReference = $tagReference;
+    }
+
     public function getSections(): Collection
     {
         return $this->sections;
     }
 
-    public function setSection(Section $section): void
+    public function getSection(string $type): ?Section
     {
-        $this->sections->put($section->getType(), $section);
+        return $this
+            ->sections
+            ->get($type);
+    }
+
+    public function setSection(Section $section): self
+    {
+        $this
+            ->sections
+            ->put($section->getType(), $section);
 
         $this->sortSections();
+
+        return $this;
     }
 
     public function isUnreleased(): bool
     {
-        return $this->version === SectionEnum::UNRELEASED->value;
+        return $this->version === self::UNRELEASED;
     }
 
     private function sortSections(): void

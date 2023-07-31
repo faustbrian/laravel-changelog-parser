@@ -17,13 +17,14 @@
     "homepage": "https://github.com/faustbrian/laravel-changelog-parser",
     "require": {
         "php": "^8.2",
+        "bombenprodukt/laravel-package-powerpack": "^1.0",
         "illuminate/contracts": "^10.0",
         "illuminate/support": "^10.0",
         "league/commonmark": "^2.4",
+        "league/html-to-markdown": "^5.1",
         "nesbot/carbon": "^2.66",
-        "bombenprodukt/laravel-package-powerpack": "^1.0",
         "spatie/laravel-data": "^3.4",
-        "symfony/css-selector": "^6.2",
+        "symfony/css-selector": "^6.3",
         "symfony/dom-crawler": "^6.2"
     },
     "require-dev": {

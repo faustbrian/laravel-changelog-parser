@@ -5,45 +5,45 @@ declare(strict_types=1);
 namespace BombenProdukt\ChangelogParser\Data;
 
 use Illuminate\Support\Collection;
-use Spatie\LaravelData\Data;
 
-final class Changelog extends Data
+final class Changelog
 {
-    /**
-     * @param Collection<int, Release> $releases
-     */
     public function __construct(
-        public readonly Collection $releases,
-        public readonly ?string $description = null,
-    ) {
-        //
-    }
+        private readonly string $description,
+        private readonly Collection $releases,
+    ) {}
 
-    /**
-     * @return Collection<int, Release>
-     */
     public function getReleases(): Collection
     {
         return $this->releases;
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     public function getUnreleased(): ?Release
     {
-        return $this->releases->filter(fn (Release $release): bool => $release->isUnreleased())->first();
+        return $this
+            ->releases
+            ->filter(function (Release $release) {
+                return $release->isUnreleased();
+            })
+            ->first();
     }
 
-    public function getLatestRelease(): ?Release
+    public function getLatestRelease(): Release
     {
-        return $this->releases->first();
+        return $this
+            ->releases
+            ->first();
     }
 
     public function hasReleases(): bool
     {
-        return $this->releases->isNotEmpty();
+        return $this
+            ->releases
+            ->isNotEmpty();
     }
 }

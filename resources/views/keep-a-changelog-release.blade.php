@@ -15,7 +15,9 @@
 
 ### {{ $sectionTitle }}
 
-{!! $section->getContent() !!}
+@foreach ($section->getItems() as $sectionItem)
+- {!! $sectionItem->toString() !!}
+@endforeach
 @endforeach
 
 @if($configuration->includeTagReferences && empty($actingAsView))

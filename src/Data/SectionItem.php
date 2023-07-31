@@ -4,23 +4,25 @@ declare(strict_types=1);
 
 namespace BombenProdukt\ChangelogParser\Data;
 
-use BombenProdukt\ChangelogParser\Support\MarkdownConverter;
-use Spatie\LaravelData\Data;
-
-final class SectionItem extends Data
+final readonly class SectionItem
 {
-    public function __construct(public readonly string $content)
+    public function __construct(
+        private string $html,
+        private string $plain,
+    ) {}
+
+    public function __toString(): string
     {
-        //
+        return $this->toString();
     }
 
-    public function getContent(): string
+    public function toString(): string
     {
-        return $this->content;
+        return $this->plain;
     }
 
     public function toHtml(): string
     {
-        return MarkdownConverter::toString($this->content);
+        return $this->html;
     }
 }

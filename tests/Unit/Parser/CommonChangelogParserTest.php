@@ -39,7 +39,7 @@ it('should get the requested section', function (): void {
     $section = $this->changelog->getLatestRelease()->getSections()->get(SectionEnum::CHANGED->value);
 
     expect($section->getType())->toBe(SectionEnum::CHANGED->value);
-    expect($section->getContent())->toBeString();
+    expect($section->getDescription())->toBeString();
 });
 
 it('should throw an exception if the changelog contains an UNRELEASED section', function (): void {
