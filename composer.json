@@ -25,7 +25,7 @@
         "nesbot/carbon": "^2.66",
         "spatie/laravel-data": "^3.4",
         "symfony/css-selector": "^6.3",
-        "symfony/dom-crawler": "^6.2"
+        "symfony/dom-crawler": "^7.0"
     },
     "require-dev": {
         "bombenprodukt/php-cs-fixer-config": "^1.0",
