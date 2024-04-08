@@ -23,7 +23,7 @@
         "league/commonmark": "^2.4",
         "league/html-to-markdown": "^5.1",
         "nesbot/carbon": "^2.66",
-        "spatie/laravel-data": "^3.4",
+        "spatie/laravel-data": "^4.5",
         "symfony/css-selector": "^6.3",
         "symfony/dom-crawler": "^6.2"
     },
