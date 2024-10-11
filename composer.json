@@ -24,7 +24,7 @@
         "league/html-to-markdown": "^5.1",
         "nesbot/carbon": "^2.66",
         "spatie/laravel-data": "^3.4",
-        "symfony/css-selector": "^6.3",
+        "symfony/css-selector": "^7.1",
         "symfony/dom-crawler": "^6.2"
     },
     "require-dev": {
