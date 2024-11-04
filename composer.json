@@ -1,0 +1,87 @@
+{
+    "name": "basecodeoy/laravel-changelog-parser",
+    "description": "A package to easily parse CHANGELOG files with Laravel.",
+    "license": "MIT",
+    "keywords": [
+        "BaseCode Oy",
+        "laravel",
+        "changelog-parser"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/basecodeoy/laravel-changelog-parser",
+    "require": {
+        "php": "^8.2",
+        "basecodeoy/laravel-package-powerpack": "^0.0.1",
+        "illuminate/contracts": "^10.0",
+        "illuminate/support": "^10.0",
+        "league/commonmark": "^2.4",
+        "league/html-to-markdown": "^5.1",
+        "nesbot/carbon": "^2.66",
+        "spatie/laravel-data": "^3.4",
+        "symfony/css-selector": "^6.3",
+        "symfony/dom-crawler": "^6.2"
+    },
+    "require-dev": {
+        "basecodeoy/php-cs-fixer-config": "^0.0.1",
+        "ergebnis/composer-normalize": "^2.2",
+        "friendsofphp/php-cs-fixer": "^3.15",
+        "infection/infection": "^0.27.0",
+        "nunomaduro/collision": "^7.0",
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "pestphp/pest-plugin-watch": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-strict-rules": "^1.5",
+        "spatie/laravel-ray": "^1.2",
+        "spatie/pest-plugin-snapshots": "^2.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "BaseCodeOy\\ChangelogParser\\": "src",
+            "BaseCodeOy\\ChangelogParser\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "ChangelogParser": "BaseCodeOy\\ChangelogParser\\Facades\\ChangelogParser"
+            },
+            "providers": [
+                "BaseCodeOy\\ChangelogParser\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
+}
